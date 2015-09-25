@@ -38,8 +38,8 @@ class Params {
 	class CTI_BASE_STARTUP_PLACEMENT {
 		title = "BASE: Startup Placement";
 		values[] = {2000,3000,4000,5000,6000,7000,8000,9000,10000,12000,15000,20000};
-		texts[] = {"2 KM","3 KM","4 KM","5 KM","6 KM","7 KM","8 KM","9 KM","10 KM","12 KM","15 KM","20 KM"};
-		default = 12000;
+		texts[] = {"2 KM","3 KM","4 KM","5 KM","6 KM","7 KM","8 KM","9 KM","10 KM","15 KM","20 KM","30 KM"};
+		default = 30000;
 	};
 	class CTI_ECONOMY_INCOME_CYCLE {
 		title = "INCOME: Delay";
@@ -147,7 +147,7 @@ class Params {
 		title = "UNITS: Fatigue reduction ratio for players";
 		values[] = {0,20,40,60,80,100};
 		texts[] = {"Full Fatigue","20%","40%","60%","80%","No Fatigue"};
-		default = 0;
+		default = 80;
 	};
 	class CTI_VEHICLES_EMPTY_TIMEOUT {
 		title = "UNITS: Vehicles Reycling Delay";
@@ -385,7 +385,7 @@ class Params {
 		title = "Zerty: TOWNS : Shop price ratio";
 		values[] = {1,2,3,5,10,100};
 		texts[] = {"1","2","3","5","10","100"};
-		default = 5;
+		default = 3;
 	};
 
 	class CTI_WEATHER_INITIAL {

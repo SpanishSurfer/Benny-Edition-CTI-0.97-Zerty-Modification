@@ -936,7 +936,7 @@ class Mission
 			leader=1;
 			skill=0.60000002;
 			text="Town0";
-			init="nullReturn = [this, ""Tasmania Airfield"", resistance, 500,""Town33""] execVM ""Common\Init\Init_Location.sqf""";
+			init="nullReturn = [this, ""Tasmania Airfield"", resistance, 500, ""Town19""] execVM ""Common\Init\Init_Location.sqf""";
 		};
 		class Item1
 		{
@@ -958,7 +958,7 @@ class Mission
 			leader=1;
 			skill=0.60000002;
 			text="Town2";
-			init="nullReturn = [this, ""Syndey Airport"", resistance, 150] execVM ""Common\Init\Init_Location.sqf""";
+			init="nullReturn = [this, ""Sydney Airport"", resistance, 500] execVM ""Common\Init\Init_Location.sqf""";
 		};
 		class Item3
 		{
@@ -969,7 +969,7 @@ class Mission
 			leader=1;
 			skill=0.60000002;
 			text="Town3";
-			init="nullReturn = [this, ""Broken Hill"", resistance, 200] execVM ""Common\Init\Init_Location.sqf""";
+			init="nullReturn = [this, ""Broken Hill"", resistance, 200, ""Town33""] execVM ""Common\Init\Init_Location.sqf""";
 		};
 		class Item4
 		{
@@ -980,7 +980,7 @@ class Mission
 			leader=1;
 			skill=0.60000002;
 			text="Town6";
-			init="nullReturn = [this, ""Tailem Bend"", resistance, 150] execVM ""Common\Init\Init_Location.sqf""";
+			init="nullReturn = [this, ""Tailem Bend"", resistance, 150, ""Town30""] execVM ""Common\Init\Init_Location.sqf""";
 		};
 		class Item5
 		{
@@ -991,7 +991,7 @@ class Mission
 			leader=1;
 			skill=0.60000002;
 			text="Town4";
-			init="nullReturn = [this, ""Adelaide Airport"", resistance, 250] execVM ""Common\Init\Init_Location.sqf""";
+			init="nullReturn = [this, ""Adelaide Airport"", resistance, 350] execVM ""Common\Init\Init_Location.sqf""";
 		};
 		class Item6
 		{
@@ -1002,7 +1002,7 @@ class Mission
 			leader=1;
 			skill=0.60000002;
 			text="Town5";
-			init="nullReturn = [this, ""Adelaide"", resistance, 350,""Town39""] execVM ""Common\Init\Init_Location.sqf""";
+			init="nullReturn = [this, ""Adelaide"", resistance, 150] execVM ""Common\Init\Init_Location.sqf""";
 		};
 		class Item7
 		{
@@ -1013,7 +1013,7 @@ class Mission
 			leader=1;
 			skill=0.60000002;
 			text="Town7";
-			init="nullReturn = [this, ""Cairns"", resistance, 145,""Town47""] execVM ""Common\Init\Init_Location.sqf""";
+			init="nullReturn = [this, ""Cairns"", resistance, 145] execVM ""Common\Init\Init_Location.sqf""";
 		};
 		class Item8
 		{
@@ -1035,7 +1035,7 @@ class Mission
 			leader=1;
 			skill=0.60000002;
 			text="Town9";
-			init="nullReturn = [this, ""Brisbane"", resistance, 200] execVM ""Common\Init\Init_Location.sqf""";
+			init="nullReturn = [this, ""Brisbane"", resistance, 200, ""Town45""] execVM ""Common\Init\Init_Location.sqf""";
 		};
 		class Item10
 		{
@@ -1046,7 +1046,7 @@ class Mission
 			leader=1;
 			skill=0.60000002;
 			text="Town12";
-			init="nullReturn = [this, ""Newcastle Waters"", resistance, 300] execVM ""Common\Init\Init_Location.sqf""";
+			init="nullReturn = [this, ""Newcastle Waters"", resistance, 150] execVM ""Common\Init\Init_Location.sqf""";
 		};
 		class Item11
 		{
@@ -1057,7 +1057,7 @@ class Mission
 			leader=1;
 			skill=0.60000002;
 			text="Town13";
-			init="nullReturn = [this, ""Coober Perdy"", resistance, 125] execVM ""Common\Init\Init_Location.sqf""";
+			init="nullReturn = [this, ""Coober Perdy"", resistance, 125, ""Town29""] execVM ""Common\Init\Init_Location.sqf""";
 		};
 		class Item12
 		{
@@ -1068,7 +1068,7 @@ class Mission
 			leader=1;
 			skill=0.60000002;
 			text="Town16";
-			init="nullReturn = [this, ""Wllare"", resistance, 125] execVM ""Common\Init\Init_Location.sqf""";
+			init="nullReturn = [this, ""Willare"", resistance, 125] execVM ""Common\Init\Init_Location.sqf""";
 		};
 		class Item13
 		{
@@ -1079,7 +1079,7 @@ class Mission
 			leader=1;
 			skill=0.60000002;
 			text="Town21";
-			init="nullReturn = [this, ""Perth"", resistance, 500,""Town38""] execVM ""Common\Init\Init_Location.sqf""";
+			init="nullReturn = [this, ""Perth"", resistance, 350] execVM ""Common\Init\Init_Location.sqf""";
 		};
 		class Item14
 		{
@@ -1090,7 +1090,7 @@ class Mission
 			leader=1;
 			skill=0.60000002;
 			text="Town17";
-			init="nullReturn = [this, ""Holt Rock"", resistance, 200] execVM ""Common\Init\Init_Location.sqf""";
+			init="nullReturn = [this, ""Holt Rock"", resistance, 100, ""Town29""] execVM ""Common\Init\Init_Location.sqf""";
 		};
 		class Item15
 		{
@@ -1101,7 +1101,7 @@ class Mission
 			leader=1;
 			skill=0.60000002;
 			text="Town18";
-			init="nullReturn = [this, ""Minyurri"", resistance, 200] execVM ""Common\Init\Init_Location.sqf""";
+			init="nullReturn = [this, ""Minyurri"", resistance, 250] execVM ""Common\Init\Init_Location.sqf""";
 		};
 		class Item16
 		{
@@ -1123,7 +1123,7 @@ class Mission
 			leader=1;
 			skill=0.60000002;
 			text="Town15";
-			init="nullReturn = [this, ""Salt Lake"", resistance, 350] execVM ""Common\Init\Init_Location.sqf""";
+			init="nullReturn = [this, ""Salt Lake"", resistance, 350,""Town16""] execVM ""Common\Init\Init_Location.sqf""";
 		};
 		class Item18
 		{
@@ -1134,7 +1134,7 @@ class Mission
 			leader=1;
 			skill=0.60000002;
 			text="Town19";
-			init="nullReturn = [this, ""Albany"", resistance, 250] execVM ""Common\Init\Init_Location.sqf""";
+			init="nullReturn = [this, ""Albany"", resistance, 250, ""Town17""] execVM ""Common\Init\Init_Location.sqf""";
 		};
 		class Item19
 		{
@@ -1145,7 +1145,7 @@ class Mission
 			leader=1;
 			skill=0.60000002;
 			text="Town20";
-			init="nullReturn = [this, ""Leonara"", resistance, 500,""Town46""] execVM ""Common\Init\Init_Location.sqf""";
+			init="nullReturn = [this, ""Leonara"", resistance, 200, ""Town15""] execVM ""Common\Init\Init_Location.sqf""";
 		};
 		class Item20
 		{
@@ -1167,7 +1167,7 @@ class Mission
 			leader=1;
 			skill=0.60000002;
 			text="Town10";
-			init="nullReturn = [this, ""Toowomba"", resistance, 300] execVM ""Common\Init\Init_Location.sqf""";
+			init="nullReturn = [this, ""Toowomba"", resistance, 300, ""Town13""] execVM ""Common\Init\Init_Location.sqf""";
 		};
 		class Item22
 		{
@@ -1178,7 +1178,7 @@ class Mission
 			leader=1;
 			skill=0.60000002;
 			text="Town22";
-			init="nullReturn = [this, ""Melbourne"", resistance, 250] execVM ""Common\Init\Init_Location.sqf""";
+			init="nullReturn = [this, ""Melbourne"", resistance, 400] execVM ""Common\Init\Init_Location.sqf""";
 		};
 		class Item23
 		{
@@ -1255,7 +1255,7 @@ class Mission
 			leader=1;
 			skill=0.60000002;
 			text="Town29";
-			init="nullReturn = [this, ""Kyancutta"", resistance, 25] execVM ""Common\Init\Init_Location.sqf""";
+			init="nullReturn = [this, ""Kyancutta"", resistance, 25, ""Town32""] execVM ""Common\Init\Init_Location.sqf""";
 		};
 		class Item30
 		{
@@ -1288,7 +1288,7 @@ class Mission
 			leader=1;
 			skill=0.60000002;
 			text="Town33";
-			init="nullReturn = [this, ""Lumber Yard"", resistance, 145,""Town42""] execVM ""Common\Init\Init_Location.sqf""";
+			init="nullReturn = [this, ""Lumber Yard"", resistance, 145] execVM ""Common\Init\Init_Location.sqf""";
 		};
 		class Item33
 		{
@@ -1332,7 +1332,7 @@ class Mission
 			leader=1;
 			skill=0.60000002;
 			text="Town36";
-			init="nullReturn = [this, ""Alice Springs"", resistance, 150] execVM ""Common\Init\Init_Location.sqf""";
+			init="nullReturn = [this, ""Alice Springs"", resistance, 150, ""Town35""] execVM ""Common\Init\Init_Location.sqf""";
 		};
 		class Item37
 		{
@@ -1343,7 +1343,7 @@ class Mission
 			leader=1;
 			skill=0.60000002;
 			text="Town37";
-			init="nullReturn = [this, ""Mount Isa"", resistance, 250] execVM ""Common\Init\Init_Location.sqf""";
+			init="nullReturn = [this, ""Mount Isa"", resistance, 250, ""Town7""] execVM ""Common\Init\Init_Location.sqf""";
 		};
 		class Item38
 		{
@@ -1354,7 +1354,7 @@ class Mission
 			leader=1;
 			skill=0.60000002;
 			text="Town38";
-			init="nullReturn = [this, ""Darwin Airfield"", resistance, 500,""Town41""] execVM ""Common\Init\Init_Location.sqf""";
+			init="nullReturn = [this, ""Darwin Airfield"", resistance, 500] execVM ""Common\Init\Init_Location.sqf""";
 		};
 		class Item39
 		{
@@ -1365,7 +1365,7 @@ class Mission
 			leader=1;
 			skill=0.60000002;
 			text="Town39";
-			init="nullReturn = [this, ""Brisbane Airport"", resistance, 200] execVM ""Common\Init\Init_Location.sqf""";
+			init="nullReturn = [this, ""Brisbane Airport"", resistance, 400] execVM ""Common\Init\Init_Location.sqf""";
 		};
 		class Item40
 		{
@@ -1376,7 +1376,7 @@ class Mission
 			leader=1;
 			skill=0.60000002;
 			text="Town40";
-			init="nullReturn = [this, ""Warburton"", resistance, 500] execVM ""Common\Init\Init_Location.sqf""";
+			init="nullReturn = [this, ""Warburton"", resistance, 250] execVM ""Common\Init\Init_Location.sqf""";
 		};
 		class Item41
 		{
@@ -1387,7 +1387,7 @@ class Mission
 			leader=1;
 			skill=0.60000002;
 			text="Town41";
-			init="nullReturn = [this, ""Eden"", resistance, 500] execVM ""Common\Init\Init_Location.sqf""";
+			init="nullReturn = [this, ""Eden"", resistance, 200] execVM ""Common\Init\Init_Location.sqf""";
 		};
 		class Item42
 		{
@@ -1431,7 +1431,7 @@ class Mission
 			leader=1;
 			skill=0.60000002;
 			text="Town45";
-			init="nullReturn = [this, ""Sydney"", resistance, 140] execVM ""Common\Init\Init_Location.sqf""";
+			init="nullReturn = [this, ""Sydney"", resistance, 300] execVM ""Common\Init\Init_Location.sqf""";
 		};
 		class Item46
 		{
@@ -1464,7 +1464,7 @@ class Mission
 			leader=1;
 			skill=0.60000002;
 			text="Town48";
-			init="nullReturn = [this, ""Perth Airport"", resistance, 175,""Town17""] execVM ""Common\Init\Init_Location.sqf""";
+			init="nullReturn = [this, ""Perth Airport"", resistance, 400,""Town17""] execVM ""Common\Init\Init_Location.sqf""";
 		};
 		class Item49
 		{
@@ -1475,7 +1475,7 @@ class Mission
 			leader=1;
 			skill=0.60000002;
 			text="Town49";
-			init="nullReturn = [this, ""Cairns Airfield"", resistance, 145] execVM ""Common\Init\Init_Location.sqf""";
+			init="nullReturn = [this, ""Cairns Airfield"", resistance, 300] execVM ""Common\Init\Init_Location.sqf""";
 		};
 	};
 	class Markers
@@ -1501,7 +1501,7 @@ class Mission
 		};
 		class Item2
 		{
-			position[]={22671.357,3.3387032,10768.409};
+			position[]={29981.592,27.331657,17415.484};
 			name="Prison";
 			type="Empty";
 			colorName="ColorPink";
@@ -1517,7 +1517,7 @@ class Mission
 		};
 		class Item4
 		{
-			position[]={5610.021,309.28171,21723.725};
+			position[]={35024.168,123.33452,20447.268};
 			name="HELO_START_0";
 			type="Empty";
 			colorName="ColorGreen";
@@ -1552,21 +1552,21 @@ class Mission
 		};
 		class Item9
 		{
-			position[]={10515.029,84.02951,14144.914};
+			position[]={9460.5596,13.452604,15782.114};
 			name="HELO_START_4";
 			type="Empty";
 			colorName="ColorGreen";
 		};
 		class Item10
 		{
-			position[]={8501.5254,42.18084,22591.121};
+			position[]={37194.188,111.71832,17096.789};
 			name="HELO_START_5";
 			type="Empty";
 			colorName="ColorGreen";
 		};
 		class Item11
 		{
-			position[]={8281.4951,67.853317,19906.736};
+			position[]={17438.729,57.084229,25040.324};
 			name="HELO_START_6";
 			type="Empty";
 			colorName="ColorGreen";
@@ -1601,7 +1601,7 @@ class Mission
 		};
 		class Item16
 		{
-			position[]={9742.7783,107.65765,14512.511};
+			position[]={27779.758,35.422009,18952.373};
 			name="HELO_START_11";
 			type="Empty";
 			colorName="ColorGreen";
@@ -1622,7 +1622,7 @@ class Mission
 		};
 		class Item19
 		{
-			position[]={13922.415,13.724786,17478.414};
+			position[]={18917.27,17.726646,22833.996};
 			name="HELO_START_14";
 			type="Empty";
 			colorName="ColorGreen";
@@ -1755,21 +1755,21 @@ class Mission
 		};
 		class Item38
 		{
-			position[]={27734.271,16.79051,21368.125};
+			position[]={26568.803,36.169579,24642.525};
 			name="HELO_START_33";
 			type="Empty";
 			colorName="ColorGreen";
 		};
 		class Item39
 		{
-			position[]={25227.996,29.664711,22464.543};
+			position[]={25283.496,20.050732,26710.16};
 			name="HELO_START_34";
 			type="Empty";
 			colorName="ColorGreen";
 		};
 		class Item40
 		{
-			position[]={26212.406,15.518887,24303};
+			position[]={24741.699,14.221697,28798.359};
 			name="HELO_START_35";
 			type="Empty";
 			colorName="ColorGreen";
@@ -1811,7 +1811,7 @@ class Mission
 		};
 		class Item46
 		{
-			position[]={22313.209,9.2807226,14070.693};
+			position[]={21870.242,20.230391,15081.995};
 			name="HELO_START_41";
 			type="Empty";
 			colorName="ColorGreen";
@@ -1832,7 +1832,7 @@ class Mission
 		};
 		class Item49
 		{
-			position[]={21972.211,11.827186,18674.453};
+			position[]={30535.674,36.148369,18176.039};
 			name="HELO_START_44";
 			type="Empty";
 			colorName="ColorGreen";
@@ -1846,7 +1846,7 @@ class Mission
 		};
 		class Item51
 		{
-			position[]={22030.188,21.254408,19726.084};
+			position[]={24436.852,15.721379,19360.74};
 			name="HELO_START_46";
 			type="Empty";
 			colorName="ColorGreen";
@@ -1860,21 +1860,21 @@ class Mission
 		};
 		class Item53
 		{
-			position[]={24311.746,3.0870998,18266.453};
+			position[]={28834.867,24.508667,21124.613};
 			name="HELO_START_48";
 			type="Empty";
 			colorName="ColorGreen";
 		};
 		class Item54
 		{
-			position[]={25688.229,11.664829,20209.816};
+			position[]={25854.723,29.440708,22901.479};
 			name="HELO_START_49";
 			type="Empty";
 			colorName="ColorGreen";
 		};
 		class Item55
 		{
-			position[]={19638.189,29.112429,19299.75};
+			position[]={20696.334,35.790798,26634.869};
 			name="HELO_START_50";
 			type="Empty";
 			colorName="ColorGreen";
@@ -1909,7 +1909,7 @@ class Mission
 		};
 		class Item60
 		{
-			position[]={18466.709,8.1425714,36809.555};
+			position[]={823.68597,4,1039.312};
 			name="CTI_TUTORIAL";
 			type="Empty";
 		};
