@@ -29,8 +29,8 @@ class Mission
 	randomSeed=7374927;
 	class Intel
 	{
-		briefingName="BECTI - Zerty - OFPS";
-		overviewText="By Benny - Adapted from OFP era MFCTI (Mike Melvin)";
+		briefingName="BECTI-Zrty-OFPS AUSTRALIA (Mod/download info on ofps.net)";
+		overviewText="By Benny - Obtain mod info from www.ofps.net";
 		resistanceWest=0;
 		startWeather=0;
 		startWind=0;
