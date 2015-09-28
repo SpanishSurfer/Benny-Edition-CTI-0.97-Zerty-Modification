@@ -37,7 +37,7 @@ _a=_a	+			[true];
 _c=_c +			[[20000,60000,80000]];
 _lev=_lev+	[3];
 _lin=_lin+	[[[],[],[]]];
-_t=_t+			[[90*CTI_UPGRADE_RATIO]];
+_t=_t+			[[90*CTI_UPGRADE_RATIO,120*CTI_UPGRADE_RATIO,150*CTI_UPGRADE_RATIO]];
 
 _l=_l+			[["Factory: AAF technologies", "Unlock AAF units (1::MRAPS, 2::APC , 3::TRACKED, 4::CHOPPERS, 5::PLANES)"]];
 _a=_a	+			[false];
