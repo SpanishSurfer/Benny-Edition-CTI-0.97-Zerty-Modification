@@ -1,6 +1,6 @@
 //--- Initial View Distance and Object View Distance for both clients and server
-setViewDistance 4000;
-setObjectViewDistance 4000;
+setViewDistance 3000;
+setObjectViewDistance 3000;
 
 NET_LOG=False;
 
