@@ -32,10 +32,9 @@ class Mission
 		briefingName="BECTI-Zrty-OFPS AUSTRALIA (Mod/download info on ofps.net)";
 		overviewText="By Benny - Obtain mod info from www.ofps.net";
 		resistanceWest=0;
-		startWeather=0;
+		timeOfChanges=24720;
 		startWind=0;
 		startWaves=0.099999994;
-		forecastWeather=0;
 		forecastWind=0;
 		forecastWaves=0.099999994;
 		forecastLightnings=0.099999994;
@@ -44,10 +43,8 @@ class Mission
 		day=21;
 		hour=5;
 		minute=0;
-		startFogBase=0.001;
-		forecastFogBase=0.001;
-		startFogDecay=0.0049999999;
-		forecastFogDecay=0.0049999999;
+		startFogDecay=0;
+		forecastFogDecay=0;
 	};
 	class Groups
 	{

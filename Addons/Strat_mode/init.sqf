@@ -32,7 +32,6 @@ with missionNamespace do {
 		CTI_SM_Connect = compileFinal preprocessFileLineNumbers "Addons\Strat_mode\Functions\SM_Connect.sqf";
 		TR_PROJ_HANDLER = compileFinal preprocessFileLineNumbers "Addons\Strat_mode\Functions\TR_proj_handler.sqf";
 		TR_HANDLER = compileFinal preprocessFileLineNumbers "Addons\Strat_mode\Functions\TR_handler.sqf";
-		F_REVAMP = compileFinal preprocessFileLineNumbers "Addons\Strat_mode\Functions\F_revamp.sqf";
 		F_REVAMP_FRAME = compileFinal preprocessFileLineNumbers "Addons\Strat_mode\Functions\F_revamp_frame.sqf";
 		SM_BP_Init = compileFinal preprocessFileLineNumbers "Addons\Strat_mode\Functions\SM_BP_Init.sqf";
 		SM_BP_Hook = compileFinal preprocessFileLineNumbers "Addons\Strat_mode\Functions\SM_BP_Hook.sqf";
@@ -50,6 +49,7 @@ with missionNamespace do {
 	   	DYNG_WAIT = compileFinal preprocessFileLineNumbers "Addons\Strat_mode\Functions\DYNG_waitforgroup.sqf";
 	   	DYNG_SERVERLOOP = compileFinal preprocessFileLineNumbers "Addons\Strat_mode\Functions\DYNG_serverloop.sqf";
 	   	H_PROTECT_WHEELS= compileFinal preprocessFileLineNumbers "Addons\Strat_mode\Functions\handler_protec_wheels.sqf";
+	   	WEATHER_HOOK= compileFinal preprocessFileLineNumbers "Addons\Strat_mode\Functions\WEATHER_HOOK.sqf";
 };
 
 //Common stuff
@@ -126,7 +126,6 @@ if (CTI_IsServer) then {
 						_side=(_this select 1);
 						_sl= (_this select 1) call CTI_CO_FNC_GetSideLogic;
 						_to=time+180;
-						//waitUntil {({_x knowsabout _o >(missionNamespace getVariable "CTI_EW_HUD_S")} count (_side call CTI_CO_FNC_GetSidePlayerGroups) == 0 )};
 						waitUntil {time > _to};
 						while {HUD_WRITE} do {sleep random (1);};
 						HUD_WRITE=true;
@@ -136,10 +135,9 @@ if (CTI_IsServer) then {
 						HUD_WRITE=false;
 					}; true
 				} count (_this select 0);
-				//if !((_this select 0) in _hud) then { _hud set [count _hud, (_this select 0)]};
+
 				_sl setVariable ["CTI_HUD_SHARED",_hud,true];
 				HUD_WRITE=false;
-				// [["CLIENT",(_this select 1)], "Client_HUD_reveal",[(_this select 0)]] call CTI_CO_FNC_NetSend;
 			};
 		};
 
@@ -234,21 +232,13 @@ if (CTI_IsServer) then {
 		skipTime _it;
 
 		// dynamic wheather
-		if ( CTI_WEATHER_DYNAMIC == 1) then {
-		 execVM "Addons\DynamicWeatherEffects\randomWeather2.sqf"
-		};
+		0 spawn WEATHER_HOOK;
 
 		// Strat mode init
 		0 call CTI_SM_Map_setup;
-		//if ( (missionNamespace getVariable 'CTI_SM_STRATEGIC')==1) then {
-			{_x spawn CTI_SM_Allow_Capture;true} count [east,west];
-		//};
+		{_x spawn CTI_SM_Allow_Capture;true} count [east,west];
+		{_x spawn SM_BP_Hook;true} count [east,west];
 
-		// Bse prot Init
-		//if ( (missionNamespace getVariable 'CTI_SM_BASEP')==1) then {
-			 //0 spawn CTI_SM_Base_Prot;
-			 {_x spawn SM_BP_Hook;true} count [east,west];
-		//};
 
 		// Patrols
 
@@ -287,19 +277,6 @@ if (CTI_IsServer) then {
 		// hc balance
 		0 spawn HCGA_Init;
 
-		// PhysX artifacts cleanup
-		/*if ((missionNamespace getVariable "CACHE_EMPTY") == 1) then {
-			0 spawn {
-				while {!CTI_Gameover} do {
-					{if !(simulationEnabled _x ) then {_x enableSimulationGlobal True};True} count (allUnits + vehicles + allDead );
-					sleep 600;
-				};
-			};
-		};*/
-
-		/*{
-			(_x) execFSM "Addons\Strat_mode\FSM\shared_objectives.fsm";
-		} forEach [east,west];*/
 
 		// time compression
 		0 spawn {
@@ -307,15 +284,15 @@ if (CTI_IsServer) then {
 			_nigth_ratio=10/CTI_WEATHER_FAST_NIGTH;
 			while {!CTI_Gameover} do {
 				if (daytime > 5 && daytime <19 ) then {
-					if (timeMultiplier != _day_ratio) then  {setTimeMultiplier _day_ratio; hint format ["%1", _day_ratio] ;};
+					if (timeMultiplier != _day_ratio) then  {setTimeMultiplier _day_ratio;};
 				} else {
-					if (timeMultiplier !=  _nigth_ratio) then {setTimeMultiplier _nigth_ratio; hint format ["%1", _nigth_ratio] ; }
+					if (timeMultiplier !=  _nigth_ratio) then {setTimeMultiplier _nigth_ratio; }
 				};
 				sleep 120;
 			};
 
 		};
-		//if (CTI_WEATHER_FAST >1) then {setTimeMultiplier CTI_WEATHER_FAST};
+
 
 
 };
@@ -336,15 +313,11 @@ if (CTI_IsClient) then {
 		};
 	};
 
-	// dynamic wheather
-	/*if ( CTI_WEATHER_DYNAMIC == 1) then {
-	 execVM "Addons\DynamicWeatherEffects\randomWeather2.sqf"
-	};*/
 
 	// NEW Revive
 	if (CTI_SM_FAR == 1) then {
 		0 spawn REV_INIT;
-		//call compileFinal preprocessFileLineNumbers "Addons\FAR_revive\FAR_revive_init.sqf";
+
 	};
 
 	// Thermal / NV restriction
@@ -356,11 +329,11 @@ if (CTI_IsClient) then {
 	0 execVM "Addons\Strat_mode\SLING_AUG\SA_Init.sqf";
 
 	// 3P restrict
-  0 execVM "Addons\Strat_mode\Functions\SM_3pRestrict.sqf";
+  	0 execVM "Addons\Strat_mode\Functions\SM_3pRestrict.sqf";
 
-  // Statics on offroads handlers
-  0 execVM "Addons\Strat_mode\Functions\SM_AttachStatics.sqf";
- if ( (missionNamespace getVariable 'CTI_SM_STRATEGIC')==1) then { 0 call CTI_SM_Draw_Connect_Towns;};
+  	// Statics on offroads handlers
+  	0 execVM "Addons\Strat_mode\Functions\SM_AttachStatics.sqf";
+ 	if ( (missionNamespace getVariable 'CTI_SM_STRATEGIC')==1) then { 0 call CTI_SM_Draw_Connect_Towns;};
 
 
 	//adaptative group size
@@ -368,7 +341,6 @@ if (CTI_IsClient) then {
 		0 execVM "Addons\Strat_mode\Functions\SM_AdaptGroup.sqf";
 	};
  	// fatique revamp
-  	//0 spawn F_REVAMP;
   	if (missionNamespace getVariable "CTI_UNITS_FATIGUE" == 1) then {
   		["F_FRAME", "onEachFrame", {0 call F_REVAMP_FRAME}] call bis_fnc_addStackedEventHandler;
   	};
@@ -379,19 +351,19 @@ if (CTI_IsClient) then {
 		0 execVM "Addons\Strat_mode\Radar\AIRR_init.sqf";
 	};
 
-  // vehicle repairs and forcelock
-  if ( (missionNamespace getVariable 'CTI_SM_REPAIR')==1) then {
+ 	 // vehicle repairs and forcelock
+ 	 if ( (missionNamespace getVariable 'CTI_SM_REPAIR')==1) then {
 		0 execVM "Addons\Strat_mode\Functions\SM_RepairVehicule.sqf";
 	};
 
-  // Strat Mode Help and fuctions
-	//if ( (missionNamespace getVariable 'CTI_SM_STRATEGIC')==1) then {
-		0 execVM "Addons\Strat_mode\Functions\SM_DrawHelp.sqf";
-		if !((side player) == resistance) then{
-			0 execVM "Addons\Strat_mode\Functions\SM_Orders.sqf";
-			0 execVM "Addons\Strat_mode\Functions\SM_TownPriority.sqf";
-		};
-	//};
+  	// Strat Mode Help and fuctions
+
+	0 execVM "Addons\Strat_mode\Functions\SM_DrawHelp.sqf";
+	if !((side player) == resistance) then{
+		0 execVM "Addons\Strat_mode\Functions\SM_Orders.sqf";
+		0 execVM "Addons\Strat_mode\Functions\SM_TownPriority.sqf";
+	};
+
 
 
 	// henroth air loadout
@@ -404,11 +376,9 @@ if (CTI_IsClient) then {
 		waitUntil {!isNil 'CTI_InitTowns'};
 		sleep 1;
 		if !(CTI_P_SideJoined == resistance) then {
-			//if (missionNamespace getVariable "CTI_SM_STRATEGIC" == 1) then {
-				execFSM "Addons\Strat_mode\FSM\town_markers.fsm";
-			/*} else {
-				execFSM "Client\FSM\town_markers.fsm";
-			};*/
+
+			execFSM "Addons\Strat_mode\FSM\town_markers.fsm";
+
 		};
 	};
 
