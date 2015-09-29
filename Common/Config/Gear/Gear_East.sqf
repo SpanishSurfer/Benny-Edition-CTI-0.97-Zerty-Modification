@@ -1465,11 +1465,11 @@ _p = _p		+ [20];
 //silencers
 
 _i = _i		+ ["muzzle_snds_93mmg"];
-_u = _u		+ [0];
+_u = _u		+ [3];
 _p = _p		+ [1000];
 
 _i = _i		+ ["muzzle_snds_93mmg_tan"];
-_u = _u		+ [0];
+_u = _u		+ [3];
 _p = _p		+ [1000];
 
 
