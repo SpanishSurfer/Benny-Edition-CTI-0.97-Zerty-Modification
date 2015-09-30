@@ -923,10 +923,10 @@ class Mission
 	};
 	class Vehicles
 	{
-		items=50;
+		items=56;
 		class Item0
 		{
-			position[]={32165.725,7.8775802,2764.9941};
+			position[]={32204.953,7.8731861,2818.3169};
 			id=60;
 			side="EMPTY";
 			vehicle="FlagPole_F";
@@ -937,7 +937,7 @@ class Mission
 		};
 		class Item1
 		{
-			position[]={31153.316,4.3315663,5252.7529};
+			position[]={31097.613,4.778543,5238.3755};
 			id=61;
 			side="EMPTY";
 			vehicle="FlagPole_F";
@@ -970,7 +970,7 @@ class Mission
 		};
 		class Item4
 		{
-			position[]={26238.074,8.1731558,11019.809};
+			position[]={26207.004,8.1835604,11030.46};
 			id=64;
 			side="EMPTY";
 			vehicle="FlagPole_F";
@@ -981,18 +981,18 @@ class Mission
 		};
 		class Item5
 		{
-			position[]={24837.217,7.4409094,13803.284};
+			position[]={24871.486,7.4372048,13849.558};
 			id=65;
 			side="EMPTY";
 			vehicle="FlagPole_F";
 			leader=1;
 			skill=0.60000002;
 			text="Town4";
-			init="nullReturn = [this, ""Adelaide Airport"", resistance, 350] execVM ""Common\Init\Init_Location.sqf""";
+			init="nullReturn = [this, ""Adelaide Airport"", resistance, 500] execVM ""Common\Init\Init_Location.sqf""";
 		};
 		class Item6
 		{
-			position[]={25035.146,7.4310384,12613.455};
+			position[]={25167.549,7.4310384,12684.791};
 			id=66;
 			side="EMPTY";
 			vehicle="FlagPole_F";
@@ -1003,7 +1003,7 @@ class Mission
 		};
 		class Item7
 		{
-			position[]={32033.268,5.2523704,29788.367};
+			position[]={32110.357,5.2508216,29826.484};
 			id=67;
 			side="EMPTY";
 			vehicle="FlagPole_F";
@@ -1025,7 +1025,7 @@ class Mission
 		};
 		class Item9
 		{
-			position[]={38683.242,4.2067766,19031.939};
+			position[]={38795.934,4.2067766,19017.094};
 			id=69;
 			side="EMPTY";
 			vehicle="FlagPole_F";
@@ -1036,18 +1036,18 @@ class Mission
 		};
 		class Item10
 		{
-			position[]={21311.977,20.342035,28669.061};
+			position[]={21241.199,20.480963,28647.143};
 			id=70;
 			side="EMPTY";
 			vehicle="FlagPole_F";
 			leader=1;
 			skill=0.60000002;
 			text="Town12";
-			init="nullReturn = [this, ""Newcastle Waters"", resistance, 150] execVM ""Common\Init\Init_Location.sqf""";
+			init="nullReturn = [this, ""Newcastle Waters"", resistance, 100] execVM ""Common\Init\Init_Location.sqf""";
 		};
 		class Item11
 		{
-			position[]={22207.295,6.5351386,21701.141};
+			position[]={22144.703,9.6214685,21503.045};
 			id=71;
 			side="EMPTY";
 			vehicle="FlagPole_F";
@@ -1058,7 +1058,7 @@ class Mission
 		};
 		class Item12
 		{
-			position[]={12844.935,4.7009358,27814.619};
+			position[]={12798.408,4.7138762,27761.982};
 			id=72;
 			side="EMPTY";
 			vehicle="FlagPole_F";
@@ -1080,14 +1080,14 @@ class Mission
 		};
 		class Item14
 		{
-			position[]={10042.474,44.359215,17017.76};
+			position[]={10077.591,44.303493,17014.248};
 			id=74;
 			side="EMPTY";
 			vehicle="FlagPole_F";
 			leader=1;
 			skill=0.60000002;
 			text="Town17";
-			init="nullReturn = [this, ""Holt Rock"", resistance, 100, ""Town29""] execVM ""Common\Init\Init_Location.sqf""";
+			init="nullReturn = [this, ""Holt Rock"", resistance, 100, ""Town50""] execVM ""Common\Init\Init_Location.sqf""";
 		};
 		class Item15
 		{
@@ -1109,7 +1109,7 @@ class Mission
 			leader=1;
 			skill=0.60000002;
 			text="Town14";
-			init="nullReturn = [this, ""Gambola"", resistance, 200] execVM ""Common\Init\Init_Location.sqf""";
+			init="nullReturn = [this, ""Gambola"", resistance, 320] execVM ""Common\Init\Init_Location.sqf""";
 		};
 		class Item17
 		{
@@ -1124,7 +1124,7 @@ class Mission
 		};
 		class Item18
 		{
-			position[]={6321.1968,9.9891186,11556.727};
+			position[]={6363.2217,78.656464,12283.673};
 			id=78;
 			side="EMPTY";
 			vehicle="FlagPole_F";
@@ -1135,25 +1135,25 @@ class Mission
 		};
 		class Item19
 		{
-			position[]={9598.7793,8.1967669,21348.621};
+			position[]={9620.1025,8.2004519,21377.014};
 			id=79;
 			side="EMPTY";
 			vehicle="FlagPole_F";
 			leader=1;
 			skill=0.60000002;
 			text="Town20";
-			init="nullReturn = [this, ""Leonara"", resistance, 200, ""Town15""] execVM ""Common\Init\Init_Location.sqf""";
+			init="nullReturn = [this, ""Leonara"", resistance, 220] execVM ""Common\Init\Init_Location.sqf""";
 		};
 		class Item20
 		{
-			position[]={22057.322,83.612724,33602.824};
+			position[]={23689.432,9.6806002,32817.27};
 			id=80;
 			side="EMPTY";
 			vehicle="FlagPole_F";
 			leader=1;
 			skill=0.60000002;
 			text="Town11";
-			init="nullReturn = [this, ""Numbulwar"", resistance, 300] execVM ""Common\Init\Init_Location.sqf""";
+			init="nullReturn = [this, ""Groot Island Reserve"", resistance, 500] execVM ""Common\Init\Init_Location.sqf""";
 		};
 		class Item21
 		{
@@ -1179,18 +1179,18 @@ class Mission
 		};
 		class Item23
 		{
-			position[]={23402.15,7.127449,35149.469};
+			position[]={23435.088,6.5831947,35096.918};
 			id=83;
 			side="EMPTY";
 			vehicle="FlagPole_F";
 			leader=1;
 			skill=0.60000002;
 			text="Town23";
-			init="nullReturn = [this, ""Yirrkala"", resistance, 150] execVM ""Common\Init\Init_Location.sqf""";
+			init="nullReturn = [this, ""Yirrkala"", resistance, 150, ""Town43""] execVM ""Common\Init\Init_Location.sqf""";
 		};
 		class Item24
 		{
-			position[]={3806.3667,5.3146553,14906.256};
+			position[]={3859.384,5.3145781,14932.889};
 			id=84;
 			side="EMPTY";
 			vehicle="FlagPole_F";
@@ -1223,62 +1223,62 @@ class Mission
 		};
 		class Item27
 		{
-			position[]={10240.927,4.8124905,29896.295};
+			position[]={10224.956,4.7851214,29894.234};
 			id=87;
 			side="EMPTY";
 			vehicle="FlagPole_F";
 			leader=1;
 			skill=0.60000002;
 			text="Town27";
-			init="nullReturn = [this, ""Kore"", resistance, 300] execVM ""Common\Init\Init_Location.sqf""";
+			init="nullReturn = [this, ""Dundee Beach"", resistance, 140] execVM ""Common\Init\Init_Location.sqf""";
 		};
 		class Item28
 		{
-			position[]={33750.172,56.787865,15665.473};
+			position[]={33762.66,56.787197,15654.659};
 			id=88;
 			side="EMPTY";
 			vehicle="FlagPole_F";
 			leader=1;
 			skill=0.60000002;
 			text="Town28";
-			init="nullReturn = [this, ""Army Base"", resistance, 500] execVM ""Common\Init\Init_Location.sqf""";
+			init="nullReturn = [this, ""Army Base"", resistance, 350] execVM ""Common\Init\Init_Location.sqf""";
 		};
 		class Item29
 		{
-			position[]={19232.139,10.061203,16440.676};
+			position[]={19305.697,10.061414,16418.896};
 			id=89;
 			side="EMPTY";
 			vehicle="FlagPole_F";
 			leader=1;
 			skill=0.60000002;
 			text="Town29";
-			init="nullReturn = [this, ""Kyancutta"", resistance, 25, ""Town32""] execVM ""Common\Init\Init_Location.sqf""";
+			init="nullReturn = [this, ""Kyancutta"", resistance, 125, ""Town32""] execVM ""Common\Init\Init_Location.sqf""";
 		};
 		class Item30
 		{
-			position[]={27983.604,18.484924,8056.2612};
+			position[]={27974.785,18.535313,8057.8555};
 			id=90;
 			side="EMPTY";
 			vehicle="FlagPole_F";
 			leader=1;
 			skill=0.60000002;
 			text="Town30";
-			init="nullReturn = [this, ""Cape Atway"", resistance, 150] execVM ""Common\Init\Init_Location.sqf""";
+			init="nullReturn = [this, ""Cape Atway"", resistance, 350] execVM ""Common\Init\Init_Location.sqf""";
 		};
 		class Item31
 		{
-			position[]={24620.584,30.881594,15971.156};
+			position[]={24821.447,30.889587,16061.886};
 			id=91;
 			side="EMPTY";
 			vehicle="FlagPole_F";
 			leader=1;
 			skill=0.60000002;
 			text="Town32";
-			init="nullReturn = [this, ""Bungaree"", resistance, 125] execVM ""Common\Init\Init_Location.sqf""";
+			init="nullReturn = [this, ""Bungaree"", resistance, 225] execVM ""Common\Init\Init_Location.sqf""";
 		};
 		class Item32
 		{
-			position[]={33024.176,10.43958,14169.438};
+			position[]={33121.172,10.526124,14170.02};
 			id=92;
 			side="EMPTY";
 			vehicle="FlagPole_F";
@@ -1296,7 +1296,7 @@ class Mission
 			leader=1;
 			skill=0.60000002;
 			text="Town31";
-			init="nullReturn = [this, ""Melbourne Airport"", resistance, 200,""Town33""] execVM ""Common\Init\Init_Location.sqf""";
+			init="nullReturn = [this, ""Melbourne Airport"", resistance, 500,""Town33""] execVM ""Common\Init\Init_Location.sqf""";
 		};
 		class Item34
 		{
@@ -1311,25 +1311,25 @@ class Mission
 		};
 		class Item35
 		{
-			position[]={19726.689,18.312195,24260.457};
+			position[]={19728.24,18.332941,24171.271};
 			id=95;
 			side="EMPTY";
 			vehicle="FlagPole_F";
 			leader=1;
 			skill=0.60000002;
 			text="Town35";
-			init="nullReturn = [this, ""Pine Gap"", resistance, 150] execVM ""Common\Init\Init_Location.sqf""";
+			init="nullReturn = [this, ""Pine Gap"", resistance, 450] execVM ""Common\Init\Init_Location.sqf""";
 		};
 		class Item36
 		{
-			position[]={22121.484,16.946039,25767.551};
+			position[]={22609.488,22.798979,24797.109};
 			id=96;
 			side="EMPTY";
 			vehicle="FlagPole_F";
 			leader=1;
 			skill=0.60000002;
 			text="Town36";
-			init="nullReturn = [this, ""Alice Springs"", resistance, 150, ""Town35""] execVM ""Common\Init\Init_Location.sqf""";
+			init="nullReturn = [this, ""Alice Airport"", resistance, 450, ""Town35""] execVM ""Common\Init\Init_Location.sqf""";
 		};
 		class Item37
 		{
@@ -1355,7 +1355,7 @@ class Mission
 		};
 		class Item39
 		{
-			position[]={38213.828,11.836349,20567.279};
+			position[]={37885.73,11.836349,20492.545};
 			id=99;
 			side="EMPTY";
 			vehicle="FlagPole_F";
@@ -1377,7 +1377,7 @@ class Mission
 		};
 		class Item41
 		{
-			position[]={35416.508,7.3100123,8517.7588};
+			position[]={35331.297,7.3119807,8415.5781};
 			id=101;
 			side="EMPTY";
 			vehicle="FlagPole_F";
@@ -1388,14 +1388,14 @@ class Mission
 		};
 		class Item42
 		{
-			position[]={31675.059,197.94586,25064.611};
+			position[]={31675.457,197.94586,25065.805};
 			id=102;
 			side="EMPTY";
 			vehicle="FlagPole_F";
 			leader=1;
 			skill=0.60000002;
 			text="Town42";
-			init="nullReturn = [this, ""Support Base"", resistance, 200] execVM ""Common\Init\Init_Location.sqf""";
+			init="nullReturn = [this, ""Support Base"", resistance, 450] execVM ""Common\Init\Init_Location.sqf""";
 		};
 		class Item43
 		{
@@ -1410,7 +1410,7 @@ class Mission
 		};
 		class Item44
 		{
-			position[]={8591.4092,7.9679084,26872.734};
+			position[]={9270.3848,8.0038528,27149.521};
 			id=104;
 			side="EMPTY";
 			vehicle="FlagPole_F";
@@ -1432,7 +1432,7 @@ class Mission
 		};
 		class Item46
 		{
-			position[]={4003.854,4.3000002,17612.021};
+			position[]={4031.1594,4.3000002,17697.891};
 			id=106;
 			side="EMPTY";
 			vehicle="FlagPole_F";
@@ -1443,7 +1443,7 @@ class Mission
 		};
 		class Item47
 		{
-			position[]={33103.527,32.932693,3920.7622};
+			position[]={33101.395,32.931068,3918.0522};
 			id=107;
 			side="EMPTY";
 			vehicle="FlagPole_F";
@@ -1454,7 +1454,7 @@ class Mission
 		};
 		class Item48
 		{
-			position[]={6942.042,7.3547373,17906.744};
+			position[]={6921.1797,7.3719864,17953.332};
 			id=108;
 			side="EMPTY";
 			vehicle="FlagPole_F";
@@ -1465,7 +1465,7 @@ class Mission
 		};
 		class Item49
 		{
-			position[]={31586.328,21.272924,31065.449};
+			position[]={31614.834,21.272924,30928.854};
 			id=109;
 			side="EMPTY";
 			vehicle="FlagPole_F";
@@ -1473,6 +1473,72 @@ class Mission
 			skill=0.60000002;
 			text="Town49";
 			init="nullReturn = [this, ""Cairns Airfield"", resistance, 300] execVM ""Common\Init\Init_Location.sqf""";
+		};
+		class Item50
+		{
+			position[]={15529.505,243.15044,17659.676};
+			id=110;
+			side="EMPTY";
+			vehicle="FlagPole_F";
+			leader=1;
+			skill=0.60000002;
+			text="Town50";
+			init="nullReturn = [this, ""Southern Desert Patrol"", resistance, 200, ""Town29""] execVM ""Common\Init\Init_Location.sqf""";
+		};
+		class Item51
+		{
+			position[]={13445.104,286.01663,21609.426};
+			id=111;
+			side="EMPTY";
+			vehicle="FlagPole_F";
+			leader=1;
+			skill=0.60000002;
+			text="Town51";
+			init="nullReturn = [this, ""Desert Peak Patrol"", resistance, 200] execVM ""Common\Init\Init_Location.sqf""";
+		};
+		class Item52
+		{
+			position[]={12510.393,8.1290092,25393.164};
+			id=112;
+			side="EMPTY";
+			vehicle="FlagPole_F";
+			leader=1;
+			skill=0.60000002;
+			text="Town52";
+			init="nullReturn = [this, ""Scrub Brush Patrol"", resistance, 350] execVM ""Common\Init\Init_Location.sqf""";
+		};
+		class Item53
+		{
+			position[]={16666.715,207.39024,28642.205};
+			id=113;
+			side="EMPTY";
+			vehicle="FlagPole_F";
+			leader=1;
+			skill=0.60000002;
+			text="Town53";
+			init="nullReturn = [this, ""Northern Desert Patrol"", resistance, 250] execVM ""Common\Init\Init_Location.sqf""";
+		};
+		class Item54
+		{
+			position[]={20824.025,5.9564204,31381.906};
+			id=114;
+			side="EMPTY";
+			vehicle="FlagPole_F";
+			leader=1;
+			skill=0.60000002;
+			text="Town54";
+			init="nullReturn = [this, ""River Patrol"", resistance, 150] execVM ""Common\Init\Init_Location.sqf""";
+		};
+		class Item55
+		{
+			position[]={28489.068,141.38718,23724.57};
+			id=115;
+			side="EMPTY";
+			vehicle="FlagPole_F";
+			leader=1;
+			skill=0.60000002;
+			text="Town55";
+			init="nullReturn = [this, ""Woodland Patrol"", resistance, 200, ""Town13""] execVM ""Common\Init\Init_Location.sqf""";
 		};
 	};
 	class Markers
@@ -1514,392 +1580,392 @@ class Mission
 		};
 		class Item4
 		{
-			position[]={35024.168,123.33452,20447.268};
+			position[]={6559.0122,121.85816,13665.214};
 			name="HELO_START_0";
 			type="Empty";
 			colorName="ColorGreen";
 		};
 		class Item5
 		{
-			position[]={4639.3633,200.80589,22353.711};
+			position[]={10265.683,86.880157,14037.257};
 			name="HELO_START_1";
 			type="Empty";
 			colorName="ColorGreen";
 		};
 		class Item6
 		{
-			position[]={4653.5127,226.72784,18192.236};
+			position[]={13392.292,71.172218,14734.511};
 			name="HELO_START";
 			type="Empty";
 			colorName="ColorGreen";
 		};
 		class Item7
 		{
-			position[]={4651.3667,226.31035,18209.645};
+			position[]={11466.919,99.061676,18437.854};
 			name="HELO_START_2";
 			type="Empty";
 			colorName="ColorGreen";
 		};
 		class Item8
 		{
-			position[]={7621.6284,208.08614,13325.232};
+			position[]={2103.1125,6.9974194,19280.027};
 			name="HELO_START_3";
 			type="Empty";
 			colorName="ColorGreen";
 		};
 		class Item9
 		{
-			position[]={9460.5596,13.452604,15782.114};
+			position[]={5978.5029,53.093803,22888.846};
 			name="HELO_START_4";
 			type="Empty";
 			colorName="ColorGreen";
 		};
 		class Item10
 		{
-			position[]={37194.188,111.71832,17096.789};
+			position[]={3289.7388,8.5340128,21567.787};
 			name="HELO_START_5";
 			type="Empty";
 			colorName="ColorGreen";
 		};
 		class Item11
 		{
-			position[]={17438.729,57.084229,25040.324};
+			position[]={8115.4609,48.488586,25468.83};
 			name="HELO_START_6";
 			type="Empty";
 			colorName="ColorGreen";
 		};
 		class Item12
 		{
-			position[]={11651.426,27.650551,22131.984};
+			position[]={7796.4858,7.0838742,20345.586};
 			name="HELO_START_7";
 			type="Empty";
 			colorName="ColorGreen";
 		};
 		class Item13
 		{
-			position[]={15874.393,107.37612,30386.01};
+			position[]={5429.9751,42.413925,14983.033};
 			name="HELO_START_8";
 			type="Empty";
 			colorName="ColorGreen";
 		};
 		class Item14
 		{
-			position[]={17953.373,61.535866,30530.643};
+			position[]={3647.8169,6.5067201,12171.246};
 			name="HELO_START_9";
 			type="Empty";
 			colorName="ColorGreen";
 		};
 		class Item15
 		{
-			position[]={6316.9219,30.09,15471.258};
+			position[]={24828.248,9.2944794,29368.139};
 			name="HELO_START_10";
 			type="Empty";
 			colorName="ColorGreen";
 		};
 		class Item16
 		{
-			position[]={27779.758,35.422009,18952.373};
+			position[]={16455.617,58.89138,15275.515};
 			name="HELO_START_11";
 			type="Empty";
 			colorName="ColorGreen";
 		};
 		class Item17
 		{
-			position[]={11516.446,53.074879,17410.16};
+			position[]={20546.313,5.9901595,35262.035};
 			name="HELO_START_12";
 			type="Empty";
 			colorName="ColorGreen";
 		};
 		class Item18
 		{
-			position[]={13560.321,5.5936675,14878.066};
+			position[]={19065.314,13.965826,33905.914};
 			name="HELO_START_13";
 			type="Empty";
 			colorName="ColorGreen";
 		};
 		class Item19
 		{
-			position[]={18917.27,17.726646,22833.996};
+			position[]={10458.914,6.2691956,27754.42};
 			name="HELO_START_14";
 			type="Empty";
 			colorName="ColorGreen";
 		};
 		class Item20
 		{
-			position[]={16620.469,12.391303,19819.42};
+			position[]={14354.258,104.76642,30611.984};
 			name="HELO_START_15";
 			type="Empty";
 			colorName="ColorGreen";
 		};
 		class Item21
 		{
-			position[]={15752.398,26.8323,20257.74};
+			position[]={11180.147,37.761826,24324.367};
 			name="HELO_START_16";
 			type="Empty";
 			colorName="ColorGreen";
 		};
 		class Item22
 		{
-			position[]={19722.215,82.507507,34557.734};
+			position[]={19501.135,13.751628,18954.143};
 			name="HELO_START_17";
 			type="Empty";
 			colorName="ColorGreen";
 		};
 		class Item23
 		{
-			position[]={30342.723,20.670591,13116.882};
+			position[]={27181.447,11.728902,26238.486};
 			name="HELO_START_18";
 			type="Empty";
 			colorName="ColorGreen";
 		};
 		class Item24
 		{
-			position[]={34231.664,32.721985,14588.622};
+			position[]={12842.427,86.13578,19269.73};
 			name="HELO_START_19";
 			type="Empty";
 			colorName="ColorGreen";
 		};
 		class Item25
 		{
-			position[]={31140.447,21.726492,15495.362};
+			position[]={30523.566,127.22132,21219.828};
 			name="HELO_START_20";
 			type="Empty";
 			colorName="ColorGreen";
 		};
 		class Item26
 		{
-			position[]={31287.813,95.120033,29346.326};
+			position[]={30084.889,15.931306,32953.164};
 			name="HELO_START_21";
 			type="Empty";
 			colorName="ColorGreen";
 		};
 		class Item27
 		{
-			position[]={13894.965,127.25053,24539.33};
+			position[]={36477.285,17.53207,24122.104};
 			name="HELO_START_22";
 			type="Empty";
 			colorName="ColorGreen";
 		};
 		class Item28
 		{
-			position[]={3647.2109,274.09607,20110.045};
+			position[]={27580.703,27.552986,20106.594};
 			name="HELO_START_23";
 			type="Empty";
 			colorName="ColorGreen";
 		};
 		class Item29
 		{
-			position[]={13592.26,35.56068,20475.77};
+			position[]={24933.568,14.335247,19298.133};
 			name="HELO_START_24";
 			type="Empty";
 			colorName="ColorGreen";
 		};
 		class Item30
 		{
-			position[]={8954.123,191.4641,17143.156};
+			position[]={33526.496,70.558502,17698.953};
 			name="HELO_START_25";
 			type="Empty";
 			colorName="ColorGreen";
 		};
 		class Item31
 		{
-			position[]={8368.6885,71.708725,25002.494};
+			position[]={28955.293,40.09338,29835.391};
 			name="HELO_START_26";
 			type="Empty";
 			colorName="ColorGreen";
 		};
 		class Item32
 		{
-			position[]={17605.617,86.35125,17227.758};
+			position[]={30339.994,139.76915,26595.83};
 			name="HELO_START_27";
 			type="Empty";
 			colorName="ColorGreen";
 		};
 		class Item33
 		{
-			position[]={16834.674,46.78714,16838.703};
+			position[]={27591.693,22.159853,22682.66};
 			name="HELO_START_28";
 			type="Empty";
 			colorName="ColorGreen";
 		};
 		class Item34
 		{
-			position[]={15425.264,43.708084,18878.059};
+			position[]={26252.186,31.894123,24040.031};
 			name="HELO_START_29";
 			type="Empty";
 			colorName="ColorGreen";
 		};
 		class Item35
 		{
-			position[]={6342.0215,197.7972,14024.557};
+			position[]={10334.386,96.229126,22293.09};
 			name="HELO_START_30";
 			type="Empty";
 			colorName="ColorGreen";
 		};
 		class Item36
 		{
-			position[]={4550.7393,57.666843,12503.57};
+			position[]={28738.227,69.87429,9996.3574};
 			name="HELO_START_31";
 			type="Empty";
 			colorName="ColorGreen";
 		};
 		class Item37
 		{
-			position[]={6447.0005,207.68181,18311.395};
+			position[]={14218.083,61.901371,22993.596};
 			name="HELO_START_32";
 			type="Empty";
 			colorName="ColorGreen";
 		};
 		class Item38
 		{
-			position[]={26568.803,36.169579,24642.525};
+			position[]={16696.037,107.18238,29934.281};
 			name="HELO_START_33";
 			type="Empty";
 			colorName="ColorGreen";
 		};
 		class Item39
 		{
-			position[]={25283.496,20.050732,26710.16};
+			position[]={26912.193,22.837423,9569.8428};
 			name="HELO_START_34";
 			type="Empty";
 			colorName="ColorGreen";
 		};
 		class Item40
 		{
-			position[]={24741.699,14.221697,28798.359};
+			position[]={10584.199,77.809708,25268.246};
 			name="HELO_START_35";
 			type="Empty";
 			colorName="ColorGreen";
 		};
 		class Item41
 		{
-			position[]={22729.473,32.199425,21095.527};
+			position[]={26867.471,30.51042,15133.977};
 			name="HELO_START_36";
 			type="Empty";
 			colorName="ColorGreen";
 		};
 		class Item42
 		{
-			position[]={28150.99,30.543949,28140.822};
+			position[]={19755.52,19.774912,21430.785};
 			name="HELO_START_37";
 			type="Empty";
 			colorName="ColorGreen";
 		};
 		class Item43
 		{
-			position[]={28688.766,28.820038,29306.338};
+			position[]={28832.291,34.585613,32089.582};
 			name="HELO_START_38";
 			type="Empty";
 			colorName="ColorGreen";
 		};
 		class Item44
 		{
-			position[]={20047.928,24.676178,16424.217};
+			position[]={28305.646,21.169243,28999.748};
 			name="HELO_START_39";
 			type="Empty";
 			colorName="ColorGreen";
 		};
 		class Item45
 		{
-			position[]={18892.809,23.786053,14574.043};
+			position[]={21457.52,13.356356,20012.033};
 			name="HELO_START_40";
 			type="Empty";
 			colorName="ColorGreen";
 		};
 		class Item46
 		{
-			position[]={21870.242,20.230391,15081.995};
+			position[]={36144.777,74.500404,21735.891};
 			name="HELO_START_41";
 			type="Empty";
 			colorName="ColorGreen";
 		};
 		class Item47
 		{
-			position[]={19955.602,23.347048,13878.775};
+			position[]={30992.242,26.045954,16156.223};
 			name="HELO_START_42";
 			type="Empty";
 			colorName="ColorGreen";
 		};
 		class Item48
 		{
-			position[]={17115.922,63.575668,27128.363};
+			position[]={8463.3447,47.36647,23266.742};
 			name="HELO_START_43";
 			type="Empty";
 			colorName="ColorGreen";
 		};
 		class Item49
 		{
-			position[]={30535.674,36.148369,18176.039};
+			position[]={16902.168,16.659599,19470.492};
 			name="HELO_START_44";
 			type="Empty";
 			colorName="ColorGreen";
 		};
 		class Item50
 		{
-			position[]={30888.805,65.303909,27644.865};
+			position[]={37033.77,110.65226,15543.889};
 			name="HELO_START_45";
 			type="Empty";
 			colorName="ColorGreen";
 		};
 		class Item51
 		{
-			position[]={24436.852,15.721379,19360.74};
+			position[]={21094.955,8.3940964,18203.512};
 			name="HELO_START_46";
 			type="Empty";
 			colorName="ColorGreen";
 		};
 		class Item52
 		{
-			position[]={22960.787,3.1900001,16952.262};
+			position[]={17504.971,49.834404,26656.758};
 			name="HELO_START_47";
 			type="Empty";
 			colorName="ColorGreen";
 		};
 		class Item53
 		{
-			position[]={28834.867,24.508667,21124.613};
+			position[]={33396.746,104.03329,24178.906};
 			name="HELO_START_48";
 			type="Empty";
 			colorName="ColorGreen";
 		};
 		class Item54
 		{
-			position[]={25854.723,29.440708,22901.479};
+			position[]={16976.629,53.708824,25216.84};
 			name="HELO_START_49";
 			type="Empty";
 			colorName="ColorGreen";
 		};
 		class Item55
 		{
-			position[]={20696.334,35.790798,26634.869};
+			position[]={33730.516,13.69893,11490.859};
 			name="HELO_START_50";
 			type="Empty";
 			colorName="ColorGreen";
 		};
 		class Item56
 		{
-			position[]={11058.629,11.178262,26391.395};
+			position[]={20352.945,25.035563,14197.914};
 			name="HELO_START_51";
 			type="Empty";
 			colorName="ColorGreen";
 		};
 		class Item57
 		{
-			position[]={13411.286,72.199524,21926.582};
+			position[]={20710.916,8.1003389,15515.48};
 			name="HELO_START_52";
 			type="Empty";
 			colorName="ColorGreen";
 		};
 		class Item58
 		{
-			position[]={20674.021,30.730125,18458.713};
+			position[]={33320.086,9.2551699,7145.7935};
 			name="HELO_START_53";
 			type="Empty";
 			colorName="ColorGreen";
 		};
 		class Item59
 		{
-			position[]={22196.785,16.541466,15685.127};
+			position[]={30390.924,3.4710562,6102.8516};
 			name="CTI_HELP";
 			type="Empty";
 			colorName="ColorUNKNOWN";

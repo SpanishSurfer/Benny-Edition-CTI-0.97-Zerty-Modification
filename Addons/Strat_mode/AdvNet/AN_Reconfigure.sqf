@@ -51,7 +51,7 @@ if (_side in [east,west] ) then {
 	_up_r=0;
 };
 if (_vehicle isKindOf "Man") then {_max_distance=AN_Range_I+200*_up_r;} else {_max_distance=AN_Range_V+1000*_up_r;};
-if (_vehicle isKindOf "FlagPole_F") then {_max_distance=5000};
+if (_vehicle isKindOf "FlagPole_F") then {_max_distance=8000};
 
 // Try to connect to closest CC
 if (_side in [east,west]) then {
