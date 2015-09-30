@@ -19,7 +19,6 @@ switch (_action) do {
 			if (count _possible == 0) then {((uiNamespace getVariable "cti_dialog_ui_gear") displayCtrl 70403) ctrlEnable false} else {((uiNamespace getVariable "cti_dialog_ui_gear") displayCtrl 70403) ctrlEnable true};
 			((uiNamespace getVariable "cti_dialog_ui_gear") displayCtrl 70201) lbSetCurSel _id;
 		} else {
-			hint format ["%1", _target];
 			_possible=[_target];
 			{
 				if (_x isKindOf "Man") then {
@@ -77,7 +76,7 @@ switch (_action) do {
 		(uiNamespace getVariable "cti_dialog_ui_gear_shop_tab") call CTI_UI_Gear_DisplayShoppingItems;
 
 		if (_target isKindOf "Man") then {
-		  	for "_i" from  70000 to 70028  /* step +1 */ do {
+		  	for "_i" from  70000 to 70027  /* step +1 */ do {
 				((uiNamespace getVariable "cti_dialog_ui_gear") displayCtrl _i) ctrlshow true;
 			};
 			for "_i" from  77000 to 77027  /* step +1 */ do {
@@ -104,7 +103,7 @@ switch (_action) do {
 		  	//77001-77026
 		  	//77109
 		  	// 70000 - 70027
-		  	for "_i" from  70000 to 70028  /* step +1 */ do {
+		  	for "_i" from  70000 to 70027 /* step +1 */ do {
 				((uiNamespace getVariable "cti_dialog_ui_gear") displayCtrl _i) ctrlshow false;
 			};
 			for "_i" from  77000 to 77027  /* step +1 */ do {
