@@ -37,7 +37,7 @@ _a=_a	+			[true];
 _c=_c +			[[20000,60000,80000]];
 _lev=_lev+	[3];
 _lin=_lin+	[[[],[],[]]];
-_t=_t+			[[90*CTI_UPGRADE_RATIO]];
+_t=_t+			[[90*CTI_UPGRADE_RATIO,120*CTI_UPGRADE_RATIO,150*CTI_UPGRADE_RATIO]];
 
 _l=_l+			[["Factory: AAF technologies", "Unlock AAF units (1::MRAPS, 2::APC , 3::TRACKED, 4::CHOPPERS, 5::PLANES)"]];
 _a=_a	+			[false];
@@ -130,10 +130,10 @@ _t=_t+			[[30*CTI_UPGRADE_RATIO]];
 
 _l=_l+			[["Network: Range", "Improve Mesh Network range (Inf: 100+Lvl*200 V: 1000+Lvl*1000)"]];
 _a=_a	+			[True];
-_c=_c +			[[4000,8000,15000]];
-_lev=_lev+	[3];
-_lin=_lin+	[[[],[],[]]];
-_t=_t+			[[10*CTI_UPGRADE_RATIO,30*CTI_UPGRADE_RATIO,60*CTI_UPGRADE_RATIO]];
+_c=_c +			[[4000,8000,15000,20000,30000]];
+_lev=_lev+	[5];
+_lin=_lin+	[[[],[],[],[],[]]];
+_t=_t+			[[10*CTI_UPGRADE_RATIO,20*CTI_UPGRADE_RATIO,40*CTI_UPGRADE_RATIO,60*CTI_UPGRADE_RATIO,80*CTI_UPGRADE_RATIO]];
 
 _l=_l+			[["Network: Exploit : Intrusion","Allow players to connect to the enemy network if inside a stolen connected vehicle"]];
 _a=_a	+			[true];

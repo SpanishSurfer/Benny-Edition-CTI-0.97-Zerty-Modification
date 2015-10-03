@@ -21,7 +21,7 @@ private ["_pos","_offset","_marker"];
 
 
  //ss83 Server Rules, comments, etc added here
-_pos=[0,35000,0];
+_pos=[0,48000,0];
 _offset=500;
 _marker = createMarkerLocal ["cti_help_00", _pos];
 _marker setMarkerTypeLocal "mil_objective";
@@ -96,7 +96,7 @@ _marker setMarkerTextLocal  format ["No towns are available when have %1 towns a
 _pos=[(_pos select 0),(_pos select 1)-_offset,0];
 
 
-_pos=[14000,14000,0];    //SS83 Added this to get people to zoom out and read the map
+_pos=[10000,10000,0];    //SS83 Added this to get people to zoom out and read the map
 _offset=250;
 
 _marker = createMarkerLocal ["cti_help_h1", _pos];
@@ -126,7 +126,7 @@ _pos=[(_pos select 0),(_pos select 1)-_offset,0];
 
 
 
-_pos=[1000,4500,0];
+_pos=[1000,10000,0];
 _offset=CTI_MARKERS_TOWN_AREA_RANGE*3;
 
 _marker = createMarkerLocal ["cti_help_1", _pos];
@@ -156,9 +156,9 @@ _pos=[(_pos select 0),(_pos select 1),(_pos select 2)+_offset/3];
 _marker = createMarkerLocal ["cti_help_30", _pos];
 _marker setMarkerTypeLocal "mil_dot";
 _marker setMarkerSizeLocal [1,1];
-_marker setMarkerColorLocal ( (CTI_P_SideJoined) call CTI_CO_FNC_GetSideColoration);
+_marker setMarkerColorLocal "ColorRed";
 _marker setMarkerAlphaLocal 0.7;
-_marker setMarkerTextLocal "BLUFOR held town.";
+_marker setMarkerTextLocal "OPFOR held town.";
 _pos=[(_pos select 0),(_pos select 1)-_offset,(_pos select 2)-_offset/3];
 
 _marker = createMarkerLocal ["cti_help_40", _pos];
@@ -172,9 +172,9 @@ _pos=[(_pos select 0),(_pos select 1),(_pos select 2)+_offset/3];
 _marker = createMarkerLocal ["cti_help_4", _pos];
 _marker setMarkerTypeLocal "mil_dot";
 _marker setMarkerSizeLocal [1,1];
-_marker setMarkerColorLocal  ( (_enemy) call CTI_CO_FNC_GetSideColoration);
+_marker setMarkerColorLocal "ColorBlue";;
 _marker setMarkerAlphaLocal 0.7;
-_marker setMarkerTextLocal "OPFOR held town.";
+_marker setMarkerTextLocal "BLUFOR held town.";
 _pos=[(_pos select 0),(_pos select 1)-_offset,(_pos select 2)-_offset/3];
 
 
@@ -212,7 +212,7 @@ _pos=[(_pos select 0),(_pos select 1)-_offset,(_pos select 2)-_offset/3];
 
 
 //SS83 Added below to put up server/TS information
-_pos=[31500,30000,0];
+_pos=[42500,30000,0];
 _offset=500;
 
 _marker = createMarkerLocal ["cti_serverinfo_1", _pos];
@@ -236,7 +236,7 @@ _marker setMarkerTypeLocal "mil_dot";
 _marker setMarkerSizeLocal [1,1];
 _marker setMarkerColorLocal "ColorWhite";
 _marker setMarkerAlphaLocal 0.8;
-_marker setMarkerTextLocal format ["Misson Name: becti_zerty_ofps"];
+_marker setMarkerTextLocal format ["Misson Name: becti_zerty_ofps.AUSTRALIA"];
 _pos=[(_pos select 0),(_pos select 1)-_offset,0];
 
 _marker = createMarkerLocal ["cti_serverinfo_4", _pos];
@@ -289,7 +289,7 @@ _pos=[(_pos select 0),(_pos select 1)-_offset,0];
 
 
 //SS83 Added this for server rules
-_pos=[31500,15000,0];
+_pos=[42500,15000,0];
 _offset=500;
 
 _marker = createMarkerLocal ["cti_serverrules_1", _pos];

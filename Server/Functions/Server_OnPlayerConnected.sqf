@@ -37,14 +37,27 @@ waitUntil {!isNil 'CTI_Init_Common'};
 
 //Find Unit
 //==========
+_try=0;
 _unit=objnull;
-while {isNull _unit && !((side _unit) in [east,west]) } do {
+while {isNull _unit && !((side _unit) in [east,west]) && _try <10} do {
 	//waitUntil {! isnull (_uid call BIS_fnc_getUnitByUid)};
-	_unit=_uid call BIS_fnc_getUnitByUid;
-	sleep 3;
+	sleep 10;
+	{
+		if (getPlayerUid _x == _uid) then
+		{
+		_unit = _x;
+		};
+	} forEach allUnits + allDead ;
+
+
+
 	["INFORMATION", "FILE: Server\Functions\Server_OnPlayerConnected.sqf", format["Unit for  [%1]  found : [%2] ",_uid,_unit]] call CTI_CO_FNC_Log;
+	_try=_try+1;
+
 	//if (CTI_Log_Level >= CTI_Log_Information) then {["INFORMATION", "FILE: Server\Functions\Server_OnPlayerConnected.sqf", format["Unit for  [%1]  found : [%2] ",_uid,_unit]] call CTI_CO_FNC_Log};
 };
+
+if (_try >=10) exitWith {false};
 
 
 
@@ -55,7 +68,7 @@ if !(isNull assignedVehicle _unit) then { unassignVehicle _unit; [_unit] orderGe
 
 _side=side _unit;
 //_default_funds = (missionNamespace getVariable format ["CTI_ECONOMY_STARTUP_FUNDS_%1", _side]);
-
+["INFORMATION", "FILE: Server\Functions\Server_OnPlayerConnected.sqf", format["Player [%1] [%2] sanitized", _name, _side]] call CTI_CO_FNC_Log;
 //Save data
 //==========
 _get = missionNamespace getVariable [format["CTI_SERVER_CLIENT_%1", _uid],["",civilian,-1,grpNull]];
@@ -66,6 +79,7 @@ if (isNil {missionNamespace getVariable format["CTI_SERVER_CLIENT_%1", _uid]}) t
 	CTI_PLAYER_VARIABLES pushBack  (format["CTI_SERVER_CLIENT_%1", _uid]);
 };
 
+["INFORMATION", "FILE: Server\Functions\Server_OnPlayerConnected.sqf", format["Player [%1] info found %2", _name, _get]] call CTI_CO_FNC_Log;
 if (CTI_Log_Level >= CTI_Log_Information) then {["INFORMATION", "FILE: Server\Functions\Server_OnPlayerConnected.sqf", format["Sent to   [%1]  found : [%2] ",(owner _unit),_get]] call CTI_CO_FNC_Log};
 
 
@@ -87,8 +101,8 @@ if (_side_origin != _side && (_side_origin in [east,west]) && CTI_TEAMSWAP == 1)
 //TEAWSTACK
 _west_count=0;
 _east_count=0;
-{_west_count=_west_count + ({isplayer _x} count(units _x));true }count (["GetAllGroupsOfSide",[west]]call BIS_fnc_dynamicGroups);
-{_east_count=_east_count + ({isplayer _x} count(units _x));true }count (["GetAllGroupsOfSide",[east]]call BIS_fnc_dynamicGroups);
+{_west_count=_west_count +(_x getVariable ["size",0]);true }count (["GetAllGroupsOfSide",[west]]call BIS_fnc_dynamicGroups);
+{_east_count=_east_count +(_x getVariable ["size",0]);true }count (["GetAllGroupsOfSide",[east]]call BIS_fnc_dynamicGroups);
 _teamstack=if ((_side_origin == civilian) && CTI_TEAMSTACK == 1 &&((_side == west && _west_count >=(_east_count +2)) ||	(_side == east && _east_count >=(_west_count +2)))) then {true} else {false};
 
 //SAVE
@@ -96,6 +110,7 @@ if !(_teamstack || _teamswap ) then {
 	_get set [1,_side];
 	missionNamespace setVariable [Format["CTI_SERVER_CLIENT_%1",_uid],_get];
 };
+["INFORMATION", "FILE: Server\Functions\Server_OnPlayerConnected.sqf", format["Player [%1] check finished TStack %2 Tswap %3", _name, _teamstack, _teamswap]] call CTI_CO_FNC_Log;
 //jail
 if (CTI_Log_Level >= CTI_Log_Information) then {["INFORMATION", "FUNCTION: CTI_PVF_Request_Join", format["Player [%1] [%2] can join? -> teamswap [%3] | teawstack [%4].", _name, _uid, _teamswap,_teamstack]] call CTI_CO_FNC_Log};
 
@@ -103,3 +118,5 @@ _was_jailed = false;
 _get = missionNamespace getVariable format ["CTI_SERVER_CLIENT_ELITE_%1", _uid];
 if !(isNil '_get') then {if (_get select 1 == 1) then {_was_jailed = true}};
 _unit setVariable ["CTI_SERVER_ANWSER",[_teamswap,_teamstack],true];
+["INFORMATION", "FILE: Server\Functions\Server_OnPlayerConnected.sqf", format["Player [%1] sending confirmation",_name]] call CTI_CO_FNC_Log;
+["CLIENT", "Client_OnMessageReceived", ["player_joined",[_name,_side]],true] call CTI_CO_FNC_NetSend;

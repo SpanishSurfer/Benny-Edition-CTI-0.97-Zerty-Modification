@@ -271,6 +271,8 @@ CTI_REQUESTS_TIMEOUT = 160; //--- A request will vanish after x seconds if left 
  * Note that the sub IDs are not defined at the same location
  */
 
+ CTI_GEAR_MOBILE_COOLOFF= 4*60;
+
 //--- Gear: Config ID
 CTI_TYPE_RIFLE = 1;
 CTI_TYPE_PISTOL = 2;
@@ -591,7 +593,7 @@ with missionNamespace do {
 	if (isNil 'CTI_ECONOMY_TOWNS_OCCUPATION') then {CTI_ECONOMY_TOWNS_OCCUPATION = 1}; //--- Determine if towns need to be occupied to bring more resources
 
 	if (isNil 'CTI_GRAPHICS_VD_MAX') then {CTI_GRAPHICS_VD_MAX = 3000};
-	if (isNil 'CTI_GRAPHICS_TG_MAX') then {CTI_GRAPHICS_TG_MAX = 50};
+	if (isNil 'CTI_GRAPHICS_TG_MAX') then {CTI_GRAPHICS_TG_MAX = 10};
 
 
 
@@ -612,19 +614,17 @@ with missionNamespace do {
 	if (isNil 'CTI_AI_SKILL') then {CTI_AI_SKILL = 4}; //Done
 	//--- zerty parameters
 
-	if (isNil 'CTI_BASEBUILDING') then {CTI_BASEBUILDING = 1}; //DOn
+	if (isNil 'CTI_BASEBUILDING') then {CTI_BASEBUILDING = 0}; //DOn
 	if (isNil 'CTI_TEAMSWAP') then {CTI_TEAMSWAP = 1}; //DOn
 	if (isNil 'CTI_TEAMSTACK') then {CTI_TEAMSTACK = 1}; //DOn
 	if (isNil 'CTI_MAX_MISSION_TIME') then {CTI_MAX_MISSION_TIME = 12}; //DOne
 	if (isNil 'CTI_VICTORY_HQ') then {CTI_VICTORY_HQ = 0}; //Done
 	if (isNil 'CTI_HALO_POLES') then {CTI_HALO_POLES = 1};
 	if (isNil 'CTI_PLAYERS_GROUPSIZE') then {CTI_PLAYERS_GROUPSIZE = 10}; //Done
-	if (isNil 'CTI_ECONOMY_BASE_PLAYER_INCOME') then {CTI_ECONOMY_BASE_PLAYER_INCOME = 25};
+	if (isNil 'CTI_ECONOMY_BASE_PLAYER_INCOME') then {CTI_ECONOMY_BASE_PLAYER_INCOME = 150};
 	if (isNil 'CTI_PLAYER_REEQUIP') then {CTI_PLAYER_REEQUIP = 1}; //Done
 	if (isNil 'CTI_PLAYER_TOWN_RESPAWN') then {CTI_PLAYER_TOWN_RESPAWN = 1}; //Done
 	if (isNil 'CTI_WEATHER_INITIAL') then {CTI_WEATHER_INITIAL = 10};
-	if (isNil 'initialWeatherParam') then {initialWeatherParam = 4};
-	if (isNil 'CTI_WEATHER_DYNAMIC') then {CTI_WEATHER_DYNAMIC = 1}; //Done
 	if (isNil 'CTI_GAMEPLAY_MISSILES_RANGE') then {CTI_GAMEPLAY_MISSILES_RANGE = 3000}; //Done
 	if (isNil 'CTI_GAMEPLAY_3P') then {CTI_GAMEPLAY_3P = -1}; //Done
 	if (isNil 'CTI_GAMEPLAY_REARM_AMMO') then {CTI_GAMEPLAY_REARM_AMMO = 1}; //Done
@@ -634,18 +634,18 @@ with missionNamespace do {
 
 
 
-	if (isNil "CTI_SM_BASEP_M") then {CTI_SM_BASEP_M=0};
+	if (isNil "CTI_SM_BASEP_M") then {CTI_SM_BASEP_M=5};
 	if (isNil "CTI_SM_REPAIR") then {CTI_SM_REPAIR=1};
-	if (isNil "CTI_SM_MORTARS") then {CTI_SM_MORTARS=1};
-	if (isNil "CTI_SM_STRATEGIC") then {CTI_SM_STRATEGIC=0};
+	if (isNil "CTI_SM_MORTARS") then {CTI_SM_MORTARS=0};
+	if (isNil "CTI_SM_STRATEGIC") then {CTI_SM_STRATEGIC=1};
 	if (isNil "CTI_SM_STRATEGIC_NB") then {CTI_SM_STRATEGIC_NB=3};
 	if (isNil "CTI_SM_HALO") then {CTI_SM_HALO=1};
 	if (isNil "CTI_SM_RADAR") then {CTI_SM_RADAR=1};
 	if (isnil "CTI_SM_FAR") then {CTI_SM_FAR = 1};
 	if (isnil "CTI_SM_NONV") then {CTI_SM_NONV = 1};
 	if (isnil "CTI_SM_PATROLS") then {CTI_SM_PATROLS = 0};
-	if (isnil "CTI_SM_PATROLS_NUMBER") then {CTI_SM_PATROLS_NUMBER = 1};
-	if (isnil "CTI_SM_TCAS") then {CTI_SM_TCAS = 200};
+	if (isnil "CTI_SM_PATROLS_NUMBER") then {CTI_SM_PATROLS_NUMBER = 0};
+	if (isnil "CTI_SM_TCAS") then {CTI_SM_TCAS = 600};
 	if (isnil "CTI_TROPHY_APS") then {CTI_TROPHY_APS = 1};
 
 
@@ -657,14 +657,14 @@ with missionNamespace do {
 
 	if (isnil "CTI_AC_ENABLED") then {CTI_AC_ENABLED = 1};
 
-	if (isnil "HC_MODE") then {HC_MODE = 1};
+	if (isnil "HC_MODE") then {HC_MODE = 0};
 	if (isnil "MIN_TOWNS") then {MIN_TOWNS = 0};
 	if (isnil "CACHE_EMPTY") then {CACHE_EMPTY = 1};
-	if (isnil "CTI_GAMEPLAY_DARTER") then {CTI_GAMEPLAY_DARTER = 500};
+	if (isnil "CTI_GAMEPLAY_DARTER") then {CTI_GAMEPLAY_DARTER = 4000};
 	if (isnil "CTI_GAMEPLAY_DARTER_FUEL") then {CTI_GAMEPLAY_DARTER_FUEL = 1};
-	if (isnil "CTI_BUY_RESTRICT_LEADER") then {CTI_BUY_RESTRICT_LEADER = 0};
-	if (isnil "CTI_GROUP_AWARD_MULT") then {CTI_GROUP_AWARD_MULT = 0};
-	if (isnil "CTI_GROUP_LEADER_RESP") then {CTI_GROUP_LEADER_RESP = 0};
+	if (isnil "CTI_BUY_RESTRICT_LEADER") then {CTI_BUY_RESTRICT_LEADER = 1};
+	if (isnil "CTI_GROUP_AWARD_MULT") then {CTI_GROUP_AWARD_MULT = 1};
+	if (isnil "CTI_GROUP_LEADER_RESP") then {CTI_GROUP_LEADER_RESP = 1};
 	if (isnil "CTI_PERSISTANT") then {CTI_PERSISTANT = 0};
 
 	if (isNil 'CTI_AI_TEAMS_NB') then { CTI_AI_TEAMS_NB = 10};

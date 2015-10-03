@@ -45,10 +45,6 @@ if (CTI_Log_Level >= CTI_Log_Information) then { //--- Information
 
 //--- Hide first to prevent spoils
 if (CTI_IsClient && isMultiplayer) then {
-//	waitUntil {!(isNull player)};
-	//if ((format["%1",side player]) == 'LOGIC' && ! (serverCommandAvailable '#shutdown')) then {failMission "END6"} ;
-//	if (format["%1",side player] == 'LOGIC')  exitWith {false};
-
 	0 spawn {
 		waitUntil {!(isNull player)};
 
@@ -74,8 +70,6 @@ if (isMultiplayer && CTI_IsServer) then {
 	CTI_SE_FNC_OnPlayerDisconnected = compileFinal preprocessFileLineNumbers "Server\Functions\Server_OnPlayerDisconnected.sqf";
 	_null=["CTI_Join", "onPlayerConnected", {[_uid, _name, _id] spawn CTI_SE_FNC_OnPlayerConnected}] call BIS_fnc_addStackedEventHandler;
 	_null = ["CTI_Left", "onPlayerDisconnected", {[_uid, _name, _id] spawn CTI_SE_FNC_OnPlayerDisconnected}] call BIS_fnc_addStackedEventHandler;
-	//onPlayerConnected {[_uid, _name, _id] spawn CTI_SE_FNC_OnPlayerConnected};
-	//onPlayerDisconnected {[_uid, _name, _id] call CTI_SE_FNC_OnPlayerDisconnected};
 };
 
 //--- JIP Part is over
@@ -96,7 +90,7 @@ if (missionNamespace getVariable "CTI_EW_ANET" == 1) then {
 0 execVM "Addons\Strat_mode\AdvNet\AN_Init.sqf";
 };
 
-//execVM "Common\Init\Init_Locations.sqf";
+
 //--- Common Part is over
 CTI_Init_Common = true;
 
@@ -130,7 +124,12 @@ if (CTI_IsHeadless) then {
 	execVM "Client\Init\Init_Client_Headless.sqf";
 };
 
-//0 execVM "Addons\Zeus\Z_init_GUER.sqf";
+//--- Set the group ID
+
+waitUntil {CTI_Init_Client || CTI_Init_Server};
+0 execVM "Addons\Strat_mode\init.sqf";
+waitUntil {CTI_Init_Strat};
+0 execVM "changelog.sqf";
 
 //---Igiload script
 _igiload = execVM "IgiLoad\IgiLoadInit.sqf";
@@ -142,12 +141,5 @@ _logistic = execVM "=BTC=_logistic\=BTC=_logistic_Init.sqf";
 waitUntil {time > 0};
 execVM "Addons\EtV.sqf";
 waitUntil {!isNil "EtVInitialized"};
-
-//--- Set the group ID
-//execVM "Common\Init\Init_GroupsID.sqf";
-waitUntil {CTI_Init_Client || CTI_Init_Server};
-0 execVM "Addons\Strat_mode\init.sqf";
-waitUntil {CTI_Init_Strat};
-0 execVM "changelog.sqf";
 
 addMissionEventHandler ["Loaded",{execVM "Client\Init\Init_Client.sqf";execVM "Addons\strat_mode\init.sqf";}];

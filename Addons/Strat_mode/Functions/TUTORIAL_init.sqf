@@ -37,6 +37,6 @@ for "_i" from 0 to 3 /* step +1 */ do {
 	};
 };
 
-TUTORIAL_EXIT= "Land_Wreck_Heli_Attack_01_F" createVehicle _pos;
+TUTORIAL_EXIT= "Land_UWreck_MV22_F" createVehicle _pos;
 TUTORIAL_EXIT enableSimulationGlobal false;
 //ADMIN_ZEUS addCuratorEditableObjects [[TUTORIAL_EXIT],false];

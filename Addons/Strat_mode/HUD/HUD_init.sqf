@@ -2,6 +2,23 @@
 #define HUD_IDC 1500000
 #define	HUD_TOWN_MAX	20
 
+
+HUD_GetRevives=compile preprocessfilelinenumbers "Addons\Strat_mode\HUD\HUD_GetRevive.sqf";
+HUD_ShowRevives=compile preprocessfilelinenumbers "Addons\Strat_mode\HUD\HUD_ShowRevive.sqf";
+HUD_GetTowns=compile preprocessfilelinenumbers "Addons\Strat_mode\HUD\HUD_GetTowns.sqf";
+HUD_ShowTowns=compile preprocessfilelinenumbers "Addons\Strat_mode\HUD\HUD_ShowTowns.sqf";
+HUD_GetTargets=compile preprocessfilelinenumbers "Addons\Strat_mode\HUD\HUD_GetTargets.sqf";
+HUD_ShowTargets=compile preprocessfilelinenumbers "Addons\Strat_mode\HUD\HUD_ShowTargets.sqf";
+HUD_ShowNotifications=compile preprocessfilelinenumbers "Addons\Strat_mode\HUD\HUD_ShowNotifications.sqf";
+HUD_UpdateInfo=compile preprocessfilelinenumbers "Addons\Strat_mode\HUD\HUD_UpdateInfo.sqf";
+HUD_UpdateVehicle=compile preprocessfilelinenumbers "Addons\Strat_mode\HUD\HUD_UpdateVehicle.sqf";
+
+
+
+
+
+
+
 HUD_Normal=true;
 HUD_Tactical=false;
 HUD_Tactical_Allies=false;
@@ -15,18 +32,9 @@ HUD_T_OBJ=[];
 HUD_Targets=[];
 HUD_Towns=[];
 HUD_Revives=[];
-/*
-HUD_KeyDown={
-	if (HUD_Tactical) then {
-		if ((HUD_Time-time > 100) && (_this select 1) == DIK_LWIN ) then {HUD_Time= 0};
-		if ((HUD_Time-time < 0) && (_this select 1) == DIK_LWIN && (_this select 2)) then {HUD_Time= Time+10000000};
 
-		if ((HUD_Time-time < 0) && (_this select 1) == DIK_LWIN && !(_this select 2)) then {HUD_Time= Time+1};
-		/*if ((_this select 1) == DIK_LWIN) then {
-			HUD_Time= Time+1;
-		};
-	};
-};*/
+
+
 
 waitUntil {!(isNull player)};
 ("CTI_HUD" call BIS_fnc_rscLayer) cutrsc["CTI_HUD_RSC","PLAIN",0,true];
@@ -65,17 +73,7 @@ waitUntil {!isNil {uiNamespace getVariable 'HUD'}};
 
 	};
 };
-/*
-0 spawn {
-	if (CTI_P_SideJoined == resistance) exitWith {false};
-	disableSerialization;
-	_main_disp = displayNull;
-	while {!CTI_GameOver &&  isNull _main_disp} do {
-		_main_disp=findDisplay 46;
-		sleep 2;
-	};
-	_main_disp displayAddEventHandler ["KeyDown","_this call HUD_KeyDown"];
-};*/
+
 
 with missionNamespace do {
 	CTI_PVF_Client_HUD_reveal={
