@@ -1,5 +1,5 @@
 class CfgSounds {
-	sounds[] = {prison,Vent,Para,nuke,nuclear_boom,nuclear_heartbeat,nuclear_geiger,geiger_1,geiger_2,geiger_3,Siren1,base_under_attack,cdr_left,cdr_step_up,enemy_base_spot,funds_transfer,hq_destroyed,hq_repaired,jailed_player,tk_base,town_captured,town_lost,upgrade_complete,upgrade_start,vehicle_repaired,vehicle_salvage,watch_your_fire,enemy_base_found,hostile_detected};
+	sounds[] = {prison,Vent,Para,nuke,nuclear_boom,nuclear_heartbeat,nuclear_geiger,geiger_1,geiger_2,geiger_3,Siren1,akbar,base_under_attack,cdr_left,cdr_step_up,enemy_base_spot,funds_transfer,hq_destroyed,hq_repaired,jailed_player,tk_base,town_captured,town_lost,upgrade_complete,upgrade_start,vehicle_repaired,vehicle_salvage,watch_your_fire,enemy_base_found,hostile_detected};
 	class prison {
 		name = "prison";
 		sound[] = {"Rsc\Sounds\prison.ogg", 1, 1.0};
@@ -61,6 +61,12 @@ class CfgSounds {
   {
     name = "Siren1";
     sound[] = {"Addons\Airstrike\Sirens.ogg", db-1, 1.0};
+	titles[] = {""};
+  };
+  class akbar
+  {
+    name = "akbar";
+    sound[] = {"Addons\nuclear\script\akbar.ogg", db+1, 1.0};
 	titles[] = {""};
   };
   class base_under_attack {

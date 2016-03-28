@@ -71,17 +71,15 @@ if !(_sell) then {
 	_structure setDir _direction;
 	_structure setVectorUp [0,0,0];
 
-	_structure setVariable ["cti_save", _variable,true];
-	_structure setVariable ["cti_completion", 10,true];
-	_structure setVariable ["cti_completion_ratio", _completion_ratio * CTI_BASE_CONSTRUCTION_RATIO_ON_DEATH,true];
+	_structure setVariable ["cti_completion", 10];
+	_structure setVariable ["cti_completion_ratio", _completion_ratio * CTI_BASE_CONSTRUCTION_RATIO_ON_DEATH];
 	// _structure setVariable ["cti_structures_iteration", round(CTI_BASE_WORKERS_BUILD_COEFFICIENT / ((_var select 3)/100))];
-	_structure setVariable ["cti_structures_iteration", (_var select 3)/100,true];
+	_structure setVariable ["cti_structures_iteration", (_var select 3)/100];
 	_structure setVariable ["cti_structure_type", ((_var select 0) select 0)];
 
-	[_side, _structure, _variable, _position, _direction] spawn CTI_SE_FNC_HandleStructureConstruction;
+	[_side, _structure, _variable, _position, _direction, true] spawn CTI_SE_FNC_HandleStructureConstruction;
 
 	_logic setVariable ["cti_structures_wip", (_logic getVariable "cti_structures_wip") + [_structure] - [objNull],true];
-	[["CLIENT", _side], "Client_structurepreplaced", [_structure]] call CTI_CO_FNC_NetSend;
 };
 
 sleep 1;

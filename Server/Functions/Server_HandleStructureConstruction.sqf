@@ -36,7 +36,7 @@
     [_side, _structure, _variable, _position, _direction] spawn CTI_SE_FNC_HandleStructureConstruction;
 */
 
-private ["_completion", "_completion_ratio", "_completion_last", "_direction", "_lasttouch", "_position", "_side", "_structure", "_variable"];
+private ["_completion", "_completion_ratio", "_completion_last", "_direction", "_isDestroyed", "_lasttouch", "_position", "_side", "_structure", "_variable"];
 
 _side = _this select 0;
 _side_id= (_side) call CTI_CO_FNC_GetSideID;
@@ -44,31 +44,41 @@ _structure = _this select 1;
 _variable = _this select 2;
 _position = _this select 3;
 _direction = _this select 4;
+_isDestroyed = if (count _this > 5) then {_this select 5} else {false};
 
-if (CTI_DEBUG) then {_structure setVariable ["cti_completion", 100,true]};
+
+if (CTI_DEBUG) then {_structure setVariable ["cti_completion", 100]};
 waitUntil {!isNil {_structure getVariable "cti_completion"}};
 _completion = _structure getVariable "cti_completion";
 _completion_ratio = _structure getVariable "cti_completion_ratio";
 _completion_last = _completion;
 
+//********Put in Benny's suggestion on removing workers from here, ss83************
 _lasttouch = time;
 
-//--- Await for the site to be constructed or "abandonned"
-while {_completion > 0 && _completion < 100} do {
-	waitUntil {!isNil {_structure getVariable "cti_completion"}};
-	_completion = _structure getVariable "cti_completion";
-	sleep CTI_BASE_CONSTRUCTION_DECAY_DELAY;
+if (_isDestroyed) then {
 
-	if (_completion > _completion_last) then { _lasttouch = time };
+	 while {_completion > 0 && _completion < 100} do {
+        _completion = _structure getVariable "cti_completion";
+        sleep CTI_BASE_CONSTRUCTION_DECAY_DELAY;
 
-	if (time - _lasttouch > CTI_BASE_CONSTRUCTION_DECAY_TIMEOUT) then {_structure setVariable ["cti_completion", _completion - CTI_BASE_CONSTRUCTION_DECAY_FROM,true]};
+        if (_completion > _completion_last) then { _lasttouch = time };
+
+        if (time - _lasttouch > CTI_BASE_CONSTRUCTION_DECAY_TIMEOUT) then {_structure setVariable ["cti_completion", _completion - CTI_BASE_CONSTRUCTION_DECAY_FROM]};
 
 	_completion_last = _completion;
-};
+}; } else {
+    //--- Normal construction cycle
+    if(!CTI_DEBUG) then {
+        sleep CTI_BASE_CONSTRUCTION_TIME; //this timer determines how long it takes for the structure to pop up, ss83
+    };	
+    _completion = 100;
+}; 
 
 _logic = (_side) call CTI_CO_FNC_GetSideLogic;
-_logic setVariable ["cti_structures_wip", (_logic getVariable "cti_structures_wip") - [_structure, objNull],true];
+_logic setVariable ["cti_structures_wip", (_logic getVariable "cti_structures_wip") - [_structure, objNull]];
 
+//******************************To here, SS83************************************
 deleteVehicle _structure;
 
 if (_completion >= 100) then {
@@ -78,7 +88,6 @@ if (_completion >= 100) then {
 	_structure setPos _position;
 	_structure setDir _direction;
 	_structure setVectorUp [0,0,0];
-	_structure setVariable ["cti_save", _variable,false];
 	_structure setVariable ["cti_structure_type", ((_var select 0) select 0)];
 
 	//--- Do we use our alternative damage system to prevent some bisteries from happening?
@@ -86,7 +95,7 @@ if (_completion >= 100) then {
 	_reduce_damages = 0;
 	{if ("DMG_Alternative" in _x) then {_alternative_damages = true}; if ("DMG_Reduce" in _x) then {_reduce_damages = _x select 1}; if ("Connected" in _x) then {_structure setVariable ["AN_iNet",_side_id,true]; _structure setVariable ["AN_Parrents",[_structure],false];} } forEach (_var select 5);
 	if (_alternative_damages) then {
-		_structure setVariable ["cti_altdmg", 0,true];
+		_structure setVariable ["cti_altdmg", 0];
 		_structure addEventHandler ["handledamage", format ["[_this select 0, _this select 2, _this select 3, '%1', %2, %3, %4, %5, %6] call CTI_SE_FNC_OnBuildingHandleVirtualDamage", _variable, (_side) call CTI_CO_FNC_GetSideID, _position, _direction, _completion_ratio, _reduce_damages]];
 	} else {
 		_structure addEventHandler ["killed", format ["[_this select 0, _this select 1, '%1', %2, %3, %4, %5] spawn CTI_SE_FNC_OnBuildingDestroyed", _variable, (_side) call CTI_CO_FNC_GetSideID, _position, _direction, _completion_ratio]];

@@ -3,23 +3,42 @@ private ["_xpos", "_ypos", "_vehicles", "_units", "_airs", "_objects", "_distanc
 _xpos = _this select 0;
 _ypos = _this select 1;
 
-_wave_radius = radiation_radius * 1;
+_wave_radius = radiation_radius * 1.5;
 
-_vehicles = nearestobjects [[_xpos, _ypos , 0], ["Car", "Motorcycle", "Tank", "Air", "Ship"], radiation_radius * 2];
+_vehicles = nearestobjects [[_xpos, _ypos , 0], ["Car", "Motorcycle", "Tank", "Air", "Ship"], radiation_radius * 1.5];
 _objects = nearestobjects [[_xpos, _ypos, 0], [], _wave_radius];
 
 sleep 4;
-
+//Core Damage Area Destroy all in this radius
 {
-  if ( ! (_x iskindof "Land_nav_pier_m_2") ) then
-  {
-    {_x setdammage 1} foreach (crew _x);
-    _x setdammage 1;
-  };
-} foreach ([_xpos, _ypos, 0] nearobjects ["All", 400]);
-
-[_xpos, _ypos] execvm "Addons\nuclear\script\damage2.sqf";
-
+	  if ( ! (_x iskindof "Land_nav_pier_m_2") ) then
+	  {
+		{_x setdammage 1} foreach (crew _x);
+		_x setdammage 1;
+	  };
+} foreach ([_xpos, _ypos, 0] nearobjects ["All", 150]);
+//Destroy Base Structures
+{
+	  if (_x iskindof "Land_Cargo_Tower_V3_F" || _x iskindof "Land_Cargo_House_V1_F" || _x iskindof "Land_Medevac_HQ_V1_F" || _x iskindof "Land_Research_HQ_F" || _x iskindof "Land_Cargo_HQ_V1_F" || _x iskindof "Land_Lighthouse_small_F" || _x iskindof "Land_Radar_Small_F" || _x iskindof "Land_Cargo_HQ_V2_F" || _x iskindof "Land_Cargo_HQ_V3_F" || _x iskindof "Land_TTowerBig_2_F" || _x iskindof "Land_Dome_Small_F" || _x iskindof "Land_Dome_Big_F" || _x iskindof "Land_Cargo_Patrol_V1_F" || _x iskindof "Land_Shed_Big_F" || _x iskindof "Land_Shed_Small_F" || _x iskindof "Land_Cargo_Tower_V1_F" || _x iskindof "Land_Mil_WallBig_4m_F") then
+	  {
+		{_x setdammage 1} foreach (crew _x);
+		_x setdammage 1;
+	  };
+} foreach ([_xpos, _ypos, 0] nearobjects ["All", 600]);
+//Destroy all in wider radius ignore map structures
+{
+	if ( ! (_x isKindOf "House") ) then
+    {
+	  if ( _x iskindof "Static" || _x iskindof "Man" || _x iskindof "Car" || _x iskindof "Motorcycle" || _x iskindof "Tank" || _x iskindof "Ship" || _x iskindof "Air") then
+	  {
+		{_x setdammage 1} foreach (crew _x);
+		_x setdammage 1;
+	  };
+	};
+} foreach ([_xpos, _ypos, 0] nearobjects ["All", 800]);
+//Blast wave
+[_xpos, _ypos] execvm "Addons\nuclear\script\damage2.sqf"; 
+//Destroy air units in main radius
 _airs = nearestobjects [[_xpos, _ypos , 0], ["Air"], radiation_radius];
 {
   _distance = [_xpos, _ypos, 0] distance _x;
@@ -35,13 +54,12 @@ _airs = nearestobjects [[_xpos, _ypos , 0], ["Air"], radiation_radius];
                   _speed / 3];
   _x setdammage ((getdammage _x) + _damage);
 } foreach _airs;
-
+//EMP effects
 {[_x] execvm "Addons\nuclear\script\electro_pulse.sqf"} foreach _vehicles;
-
+//Destroy units in radius
 {
-  if ( ! (_x iskindof "All") ) then {_x setdammage 1}
-  else
-  {
+if ( ! (_x isKindOf "House") ) then
+    {
     if ( _x iskindof "Man" || _x iskindof "Car" || _x iskindof "Motorcycle" || _x iskindof "Tank" || _x iskindof "Ship" ) then
     {
       _distance = [_xpos, _ypos, 0] distance _x;
@@ -51,14 +69,12 @@ _airs = nearestobjects [[_xpos, _ypos , 0], ["Air"], radiation_radius];
       _damage = 1 - _distance / radiation_radius;
       _damage = _damage * _damage;
       _speed = _damage + random (_damage / 4);
-      if ( _x iskindof "Man" ) then {_speed = _speed * 2}
-        else {[_x, _speed * 4] execvm "Addons\nuclear\script\rotate.sqf"};
+      if ( _x iskindof "Man" ) then {_speed = _speed * 2} else {[_x, _speed * 4] execvm "Addons\nuclear\script\rotate.sqf"};
       _speed = _speed * main_nuclear_blow_speed;
       _x setvelocity [(_vel select 0) + (_speed * cos _dir),
                       (_vel select 1) + (_speed * sin _dir),
                       _speed / 3];
       _x setdammage ((getdammage _x) + _damage);
-    };
-  };  
-} foreach _objects;
-
+    }; 
+}; 
+} foreach _objects; 

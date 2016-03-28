@@ -457,6 +457,30 @@ _marker setMarkerAlphaLocal 0.9;
 _marker setMarkerTextLocal format ["Bridge"];
 _pos=[(_pos select 0),(_pos select 1)-_offset,0];
 
+_pos=[14944.827,2580.1428];    //Nimitz 1
+_offset=150;
+
+_marker = createMarkerLocal ["cti_map_markers_1", _pos];
+_marker setMarkerTypeLocal "hd_pickup";
+_marker setMarkerSizeLocal [1,1];
+_marker setMarkerColorLocal "ColorBlack";
+_marker setMarkerAlphaLocal 0.9;
+_marker setMarkerTextLocal format ["Nimitz"];
+_pos=[(_pos select 0),(_pos select 1)-_offset,0];
+
+_pos=[15082.636,28064.184,0];    //Nimitz 2
+_offset=150;
+
+_marker = createMarkerLocal ["cti_map_markers_2", _pos];
+_marker setMarkerTypeLocal "hd_pickup";
+_marker setMarkerSizeLocal [1,1];
+_marker setMarkerColorLocal "ColorBlack";
+_marker setMarkerAlphaLocal 0.9;
+_marker setMarkerTextLocal format ["Nimitz"];
+_pos=[(_pos select 0),(_pos select 1)-_offset,0];
+
+
+
 /*//SS83 The Team Drawing Board
 _pos=[24000,13000,0];
 _offset=500;

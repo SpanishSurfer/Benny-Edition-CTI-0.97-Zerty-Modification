@@ -77,7 +77,8 @@ _type_killed = typeOf _killed;
 _type_killer = typeOf _killer;
 _isplayable_killed = (_group_killed) call CTI_CO_FNC_IsGroupPlayable;
 _isplayable_killer = (_group_killer) call CTI_CO_FNC_IsGroupPlayable;
-// _isplayer_killer = if (isPlayer leader _group_killer) then {true} else {false};
+_isplayer_killer = if (isPlayer leader _group_killer) then {true} else {false};
+_isplayer_killed = if (isPlayer leader _group_killed) then {true} else {false};
 
 _renegade_killer = if (_side_killer == sideEnemy) then {true} else {false};
 
@@ -98,6 +99,7 @@ if (!isNil '_var' && _isplayable_killer) then {
 
 	if (_side_killer != _side_killed) then { //--- Kill
 		if (_side_killed != civilian) then {
+			
 			//--- The kill does not come from the leader, award the score to the leader in any cases.
 			if (_killer != leader _group_killer) then {
 				_points = switch (true) do {case (_type_killed isKindOf "Infantry"): {1};case (_type_killed isKindOf "Car"): {2};case (_type_killed isKindOf "Ship"): {4};case (_type_killed isKindOf "Motorcycle"): {1};case (_type_killed isKindOf "Tank"): {4};case (_type_killed isKindOf "Helicopter"): {4};case (_type_killed isKindOf "Plane"): {6};case (_type_killed isKindOf "StaticWeapon"): {2};case (_type_killed isKindOf "Building"): {2};default {1}};
@@ -120,13 +122,23 @@ if (!isNil '_var' && _isplayable_killer) then {
 				_bounty = round( _cost * CTI_VEHICLES_BOUNTY /100);
 				if (count _award_groups > 1) then { _bounty = round(_bounty / (count _award_groups))};
 
-				//--- Award
+				//--- Awards
+				//--- AI Award
 				{
 					if (_x call CTI_CO_FNC_IsGroupPlayable) then {
 						if (isPlayer leader _x) then {[["CLIENT", leader _x], "Client_AwardBounty", [_var_name, _bounty]] call CTI_CO_FNC_NetSend} else {[_x, _side_killer, _bounty] call CTI_CO_FNC_ChangeFunds};
 					};
 				} forEach _award_groups;
-
+				//--- PVP Award
+				if (_isplayable_killed && _isplayer_killed) then {
+					_pvpname = "PLAYER NAME HERE";
+					_pvpbounty = 2500;
+					{
+						if (_x call CTI_CO_FNC_IsGroupPlayable) then {
+							if (isPlayer leader _x) then {[["CLIENT", leader _x], "Client_AwardBounty", [_var_name, _pvpbounty]] call CTI_CO_FNC_NetSend} else {[_x, _side_killer, _pvpbounty] call CTI_CO_FNC_ChangeFunds};
+						};
+					} forEach _award_groups;
+				}
 			};
 			// zeus guerilla
 

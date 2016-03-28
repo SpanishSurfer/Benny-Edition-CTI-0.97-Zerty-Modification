@@ -5,7 +5,6 @@ _start_time = time;
 _total_time = 192 + random 128;
 enableCamShake true;
 addCamShake [5, 20, 10];
-[_this,800,42] call BIS_fnc_destroyCity;
 _sleep = 0.5;
 while {alive _object && time - _start_time < _total_time} do
 {

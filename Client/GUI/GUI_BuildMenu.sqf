@@ -20,7 +20,7 @@ while { true } do {
 	};
 
 	if (_last_workercount != _count&& (missionnamespace getVariable "CTI_BASEBUILDING") < 1) then {
-		((uiNamespace getVariable "cti_dialog_ui_buildmenu") displayCtrl 100009) ctrlSetStructuredText (parseText format["Workers: <t color='#66baff'>%1</t>/%2", _count, CTI_BASE_WORKERS_LIMIT]);
+		((uiNamespace getVariable "cti_dialog_ui_buildmenu") displayCtrl 100009) ctrlSetStructuredText (parseText format["Workers not required!");
 	};
 
 	_last_funds = _funds;

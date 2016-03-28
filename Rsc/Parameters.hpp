@@ -153,7 +153,7 @@ class Params {
 		title = "UNITS: Fatigue";
 		values[] = {0,1};
 		texts[] = {"Disabled","Enabled"};
-		default = 0;
+		default = 0;		
 	};
 	class CTI_FATIGUE_RATIO {
 		title = "UNITS: Fatigue reduction ratio for players";
@@ -162,7 +162,7 @@ class Params {
 		default = 100;
 	};
 	class CTI_VEHICLES_EMPTY_TIMEOUT {
-		title = "UNITS: Vehicles Reycling Delay";
+		title = "UNITS: Vehicles Recycling Delay";
 		values[] = {60,120,180,240,300,600,1200,1800,2400,3000,3600};
 		texts[] = {"1 Minute","2 Minutes","3 Minutes","4 Minutes","5 Minutes","10 Minutes","20 Minutes","30 Minutes","40 Minutes","50 Minutes","1 Hour"};
 		default = 1800;
@@ -312,9 +312,9 @@ class Params {
 	};
 	class CTI_BASEBUILDING {
 		title = "Zerty: GAMEPLAY: Base building";
-		values[] = {0,1};
-		texts[] = {"Workers","Players"};
-		default = 0;
+		values[] = {1};
+		texts[] = {"Players"};
+		default = 1;
 	};
 	class CTI_GAMEPLAY_DARTER {
 		title = "Zerty: GAMEPLAY: Darter Range limitation";
@@ -374,7 +374,7 @@ class Params {
 		title = "Zerty: TOWNS: Value Award Ratio";
 		values[] = {1,2,3,4,5,10};
 		texts[] = {"1","2","3","4","5","10"};
-		default = 15;
+		default = 25;
 	};
 	class CTI_TOWNS_RESISTANCE_DETECTION_RANGE {
 		title = "Zerty: TOWNS: Detection Range";
@@ -436,7 +436,7 @@ class Params {
 		title = "Zerty: Strategic: Base Protection Mode";
 		values[] = {0,-1,2,5,10,20,50,100};
 		texts[] = {"Disabled","Hard Protection","Dmg reduced by 2","Dmg reduced by 5","Dmg reduced by 10","Dmg reduced by 20","Dmg reduced by 50","Dmg reduced by 100"};
-		default = 10;
+		default = 50;
 	};
 
 	class CTI_SM_PATROLS {
@@ -560,6 +560,6 @@ class Params {
 		title = "Henroth: Aircraft Loadout Customisation : Enabled";
 		values[] = {0,1};
 		texts[] = {"Disabled","Enabled"};
-		default = 1;
+		default = 0;
 	};
 };

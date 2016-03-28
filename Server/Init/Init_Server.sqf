@@ -158,6 +158,7 @@ while {! (((getMarkerPos format ["HELO_START_%1", _i])select 0) == 0)} do
 		_defense_team = createGroup _side;
 		_defense_team setGroupIDGlobal ["Defense Team"];
 		_logic setVariable ["cti_defensive_team", _defense_team,true];
+		_defense_team setVariable ["HCExclusion", true, true]; //--- Net Broadcast
 	};
 
 	//--- Add FOB if needed

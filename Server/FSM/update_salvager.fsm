@@ -171,7 +171,7 @@ class FSM
        "	if !(isNil '_var_classname') then {" \n
        "		_side = side driver _salvager;" \n
        "		_group = group driver _salvager;" \n
-       "		if (_side in [west,east]) then {" \n
+       "		if (_side in [west,east,resistance]) then {" \n
        "			_salvage_value = round((_var_classname select 2) * CTI_VEHICLES_SALVAGE_RATE);" \n
        "			_commander_get = 0;" \n
        "			_player_get = 0;" \n

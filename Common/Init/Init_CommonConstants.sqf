@@ -241,8 +241,7 @@ CTI_UPGRADE_EXPI = 			19;
 CTI_UPGRADE_TRT = 			20;
 CTI_UPGRADE_TRA = 			21;
 CTI_UPGRADE_REST = 			22;
-CTI_UPGRADE_AIRSTRIKE =     23;
-CTI_UPGRADE_NUKE =          24;
+CTI_UPGRADE_NUKE =          23;
 //-----------------------------------------------------------------------------------------------------------------------//
 
 
@@ -389,6 +388,7 @@ with missionNamespace do {
 //--- Base: Area
 //CTI_BASE_AREA_MAX = if !(MADE_FOR_STRATIS) then {2} else {1};
 CTI_BASE_AREA_RANGE = if !(MADE_FOR_STRATIS) then {250} else {150};
+CTI_BASE_CONSTRUCTION_TIME = 180; //--- Length of time a structure takes to build, in seconds.
 
 //--- Base: Construction
 CTI_BASE_CONSTRUCTION_DECAY_TIMEOUT = 600; //--- Decay starts after x seconds unattended.
@@ -465,9 +465,9 @@ with missionNamespace do {
  */
 
 //--- Vehicles: Misc
-CTI_VEHICLES_RETEXTURE = ["I_Heli_Transport_02_F", "B_APC_Tracked_01_CRV_F", "B_MBT_01_mlrs_F"]; //--- Vehicles to retexture with basic skins, ss83 
-CTI_MR_RETEXTURE = ["I_Heli_light_03_unarmed_F"]; //ss83 mobile respawn retexture custom skins
-CTI_AFIGHTER_RETEXTURE = ["I_Plane_Fighter_03_AA_F"]; //ss83 air superiority asset with custom skins
+CTI_VEHICLES_RETEXTURE = []; //--- Vehicles to retexture with basic skins, ss83 
+CTI_MR_RETEXTURE = []; //ss83 mobile respawn retexture custom skins
+CTI_AFIGHTER_RETEXTURE = []; //ss83 air superiority asset with custom skins
 
 
 //--- Vehicles: Misc
@@ -578,9 +578,6 @@ CTI_HALO_ALTITUDE = 1200;
 CTI_HALO_RATIO = 1;
 CTI_UPGRADE_RATIO=if !(MADE_FOR_STRATIS) then {7} else {2};
 
-CTI_AIRSTRIKE_COOLDOWN = 30*60;
-CTI_AIRSTRIKE_LASTTIME=-CTI_AIRSTRIKE_COOLDOWN;
-
 CTI_VOTE_RATIO=0.51;
 
 
@@ -656,7 +653,6 @@ with missionNamespace do {
 	if (isNil "CTI_SM_STRATEGIC") then {CTI_SM_STRATEGIC=1};
 	if (isNil "CTI_SM_STRATEGIC_NB") then {CTI_SM_STRATEGIC_NB=3};
 	if (isNil "CTI_SM_HALO") then {CTI_SM_HALO=1};
-	if (isNil "CTI_SM_AIRSTRIKE") then {CTI_SM_AIRSTRIKE=1};
 	if (isNil "CTI_SM_NUKE") then {CTI_SM_NUKE=1};
 	if (isNil "CTI_SM_RADAR") then {CTI_SM_RADAR=1};
 	if (isnil "CTI_SM_FAR") then {CTI_SM_FAR = 1};
@@ -664,7 +660,7 @@ with missionNamespace do {
 	if (isnil "CTI_SM_NV_THER_VEH") then {CTI_SM_NV_THER_VEH = 0};
 	if (isnil "CTI_SM_PATROLS") then {CTI_SM_PATROLS = 0};
 	if (isnil "CTI_SM_PATROLS_NUMBER") then {CTI_SM_PATROLS_NUMBER = 0};
-	if (isnil "CTI_SM_TCAS") then {CTI_SM_TCAS = 600};
+	if (isnil "CTI_SM_TCAS") then {CTI_SM_TCAS = 500};
 	if (isnil "CTI_TROPHY_APS") then {CTI_TROPHY_APS = 1};
 
 
@@ -676,7 +672,6 @@ with missionNamespace do {
 
 	if (isnil "CTI_AC_ENABLED") then {CTI_AC_ENABLED = 1};
 
-	if (isnil "HC_MODE") then {HC_MODE = 0};
 	if (isnil "MIN_TOWNS") then {MIN_TOWNS = 0};
 	if (isnil "CACHE_EMPTY") then {CACHE_EMPTY = 1};
 	if (isnil "CTI_GAMEPLAY_DARTER") then {CTI_GAMEPLAY_DARTER = 4000};

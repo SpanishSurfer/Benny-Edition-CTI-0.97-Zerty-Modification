@@ -1,4 +1,7 @@
 private ["_xpos", "_ypos", "_vx", "_vy", "_vz", "_coe", "_ran", "_pos", "_velocity", "_color", "_alpha", "_ps", "_delay", "_x"];
+_xpos = _this select 0;
+_ypos = _this select 1;
+
 
 quake = {
 

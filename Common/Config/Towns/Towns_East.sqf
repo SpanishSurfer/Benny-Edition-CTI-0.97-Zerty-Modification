@@ -40,8 +40,8 @@ with missionNamespace do {
 
 	//--- Naval
 	EAST_NAVAL_INFANTRY = ["O_diver_TL_F", "O_diver_F"];
-	EAST_NAVAL_BOATS = ["O_Boat_Armed_01_hmg_F"];
-	EAST_NAVAL_ASSAULT_BOATS = ["O_Boat_Transport_01_F"];
+	EAST_NAVAL_BOATS = ["O_Boat_Transport_01_F"];
+	EAST_NAVAL_ASSAULT_BOATS = ["O_Boat_Armed_01_hmg_F"];
 	EAST_NAVAL_ARMORED = ["O_APC_Wheeled_02_rcws_F"];
 	
 	//--- Vehicles - Mixed

@@ -290,15 +290,8 @@ class CTI_RscInteraction {
 			action = "['OnDisDef'] call compile preprocessFileLineNumbers 'Addons\Strat_mode\Tablet\Events_UI_Interact.sqf'";
 			toolTip="Dismount Defense";
 		};
-		class CTI_Icon_Strike : CTI_Icon_Tablet {
-			idc = 511036;
-			x = "SafeZoneX + SafeZoneW*0.55";
-			text = "Rsc\Pictures\icon_bomb.paa";
-			action = "['OnStrike'] call compile preprocessFileLineNumbers 'Addons\Strat_mode\Tablet\Events_UI_Interact.sqf'";
-			toolTip="Call In Airstrike";
-		};
 		class CTI_Icon_Nuke : CTI_Icon_Tablet {
-			idc = 511037;
+			idc = 511036;
 			x = "SafeZoneX + SafeZoneW*0.55";
 			text = "Rsc\Pictures\icon_nuke.paa";
 			action = "['OnNuke'] call compile preprocessFileLineNumbers 'Addons\Strat_mode\Tablet\Events_UI_Interact.sqf'";
@@ -661,6 +654,9 @@ class CTI_RscBuildMenu_Tablet {
 			text = "X";
 			action = "closeDialog 0";
 		};
+		
+/* No more workers SS83		
+		
 		class CTI_Menu_Control_AddWorker : RscButton {
 			idc = 100005;
 
@@ -672,6 +668,8 @@ class CTI_RscBuildMenu_Tablet {
 			text = "Add Worker";
 			action = "['onAddWorker'] call compile preprocessFileLineNumbers 'Client\Events\Events_UI_ConstructionCamera.sqf'";
 		};
+*/	
+	
 		class CTI_Menu_Control_Info : RscStructuredText {
 			idc = 100008;
 

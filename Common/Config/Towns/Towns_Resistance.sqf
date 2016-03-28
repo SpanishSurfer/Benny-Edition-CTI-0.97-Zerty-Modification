@@ -30,7 +30,7 @@ with missionNamespace do {
 	// GUER_VEHICLE_AA = ["aa1","aa2"];
 	GUER_VEHICLE_APC = ["I_APC_Wheeled_03_cannon_F"]; //todo: replace with real veh later on
 	// GUER_VEHICLE_APC = ["B_APC_Wheeled_01_cannon_F", "O_APC_Wheeled_02_rcws_F", "B_APC_Tracked_01_rcws_F", "O_APC_Wheeled_02_rcws_F"]; //todo: replace with real veh later on
-	GUER_VEHICLE_ARMORED_HEAVY = ["I_MBT_03_cannon_F"];
+	GUER_VEHICLE_ARMORED_HEAVY = ["I_APC_tracked_03_cannon_F"];
 	GUER_VEHICLE_ARMORED_LIGHT = ["I_APC_tracked_03_cannon_F"];   
 	// GUER_VEHICLE_MECHANIZED = ["mechanized1","mechanized2"];
 	GUER_VEHICLE_MOTORIZED = ["I_G_Offroad_01_armed_F", "I_G_Offroad_01_armed_F", "I_G_Offroad_01_armed_F", "I_MRAP_03_gmg_F","I_MRAP_03_hmg_F"];
@@ -48,5 +48,5 @@ with missionNamespace do {
 	// GUER_VEHICLES_MEDIUM = GUER_VEHICLE_ARMORED_LIGHT + GUER_VEHICLE_APC;
 	GUER_VEHICLES_MEDIUM = GUER_VEHICLE_APC;
 	// GUER_VEHICLES_MEDIUM = GUER_VEHICLE_MOTORIZED;
-	 GUER_VEHICLES_HEAVY =  GUER_VEHICLE_ARMORED_LIGHT;
+	 GUER_VEHICLES_HEAVY =  GUER_VEHICLE_ARMORED_LIGHT+GUER_VEHICLE_ARMORED_HEAVY;
 };

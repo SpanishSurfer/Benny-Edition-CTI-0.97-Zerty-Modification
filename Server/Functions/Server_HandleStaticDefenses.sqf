@@ -36,6 +36,9 @@ _logic = (_side) call CTI_CO_FNC_GetSideLogic;
 _sideID = (_side) call CTI_CO_FNC_GetSideID;
 _defense_team = _logic getVariable "cti_defensive_team";
 
+//--- Benny Debug
+["DEBUG", "FILE: Server\Functions\Server_HandleStaticDefenses.sqf", format ["Handling Defense around the structure base [%1] at position [%2] for side [%3] assigned to Defense Group [%4]", typeOf _structure, position _structure, _side, _defense_team]] call CTI_CO_FNC_Log;
+
 _var = missionNamespace getVariable format ["CTI_%1_%2", _side, _structure getVariable "cti_structure_type"];
 _direction = 360 - ((_var select 4) select 0);
 _distance = (_var select 4) select 1;
@@ -64,13 +67,13 @@ while {alive _structure} do {
 			//--- The static is occupied
 			if (alive gunner _x || alive assignedGunner _x) then {
 				_x setVariable ["cti_aman_time_occupied", time];
-			} else {;
+			} else {
 				//--- The static is empty
 				if (!alive gunner _x && !alive assignedGunner _x && !_manned && time - _last_occupied > CTI_BASE_DEFENSES_AUTO_DELAY && count(_defense_team call CTI_CO_FNC_GetLiveUnits) < CTI_BASE_DEFENSES_AUTO_LIMIT && ! isNull _x  && alive _x) then {
 					_manned = true;
 
 					//--- Create the unit
-					_ai = [missionNamespace getVariable format["CTI_%1_Soldier", _side], _defense_team, _position, _sideID, _net] call CTI_CO_FNC_CreateUnit;
+					_ai = [missionNamespace getVariable format["CTI_%1_Static", _side], _defense_team, _position, _sideID, _net] call CTI_CO_FNC_CreateUnit;
 
 					//--- Assign him to the defense
 					[_ai] allowGetIn true;
@@ -79,6 +82,9 @@ while {alive _structure} do {
 					[_ai] orderGetIn true;
 
 					_ai setVariable ["cti_aman_time_expected", time + ((((_ai distance _x)/(14*1000))*3600)+20)];
+					
+					//--- Benny Debug
+					["DEBUG", "FILE: Server\Functions\Server_HandleStaticDefenses.sqf", format ["Created Defensive AI [%1] for Defensive Group [%2] at position [%3] for side [%4], now manning defense [%5] of base [%6] at position [%7]", _ai, _defense_team, _position, _side, _x, typeOf _x, position _x]] call CTI_CO_FNC_Log;
 				};
 
 				//--- The static is empty but it has an assigned gunner... but could he make it into the static..?
@@ -88,12 +94,25 @@ while {alive _structure} do {
 
 					if !(isNil '_time_expected') then {
 						if (vehicle _ai != _x && alive _ai && time >= _time_expected) then {
-							if ((_x emptyPositions "gunner" > 0) && alive _x) then {_ai moveInGunner _x} else {deleteVehicle _ai};
+							if ((_x emptyPositions "gunner" > 0) && alive _x) then {
+								//--- Benny Debug
+								["DEBUG", "FILE: Server\Functions\Server_HandleStaticDefenses.sqf", format ["Defense AI [%1] of Defensive Group [%2] for side [%3] is still alive but is unable to reach the defense, he will now be moved in the defense [%4] of base [%5] at position [%6]", _ai, _defense_team, _side, _x, typeOf _x, position _x]] call CTI_CO_FNC_Log;
+								_ai moveInGunner _x;
+							} else {
+								//--- Benny Debug
+								["DEBUG", "FILE: Server\Functions\Server_HandleStaticDefenses.sqf", format ["Defense AI [%1] of Defensive Group [%2] for side [%3] couldn't make it to the defense alive, now deleting", _ai, _defense_team, _side]] call CTI_CO_FNC_Log;
+								deleteVehicle _ai;
+							};
 						};
 					};
 				};
 				if !(alive _x) then {
-					if (!(isnull (_x getVariable ["CTI_assigned_gunner_obj",objnull])) && alive (_x getVariable ["CTI_assigned_gunner_obj",objnull]) ) then { deleteVehicle (_x getVariable ["CTI_assigned_gunner_obj",objnull]) };
+					if (!(isnull (_x getVariable ["CTI_assigned_gunner_obj",objnull])) && alive (_x getVariable ["CTI_assigned_gunner_obj",objnull]) ) then { 
+						//--- Benny Debug
+						["DEBUG", "FILE: Server\Functions\Server_HandleStaticDefenses.sqf", format ["Defense [%1] of base [%2] at position [%3] is destroyed but the AI is still alive [%4], removing him", _x, typeOf _x, position _x, _x getVariable ["CTI_assigned_gunner_obj",objnull]]] call CTI_CO_FNC_Log;
+						
+						deleteVehicle (_x getVariable ["CTI_assigned_gunner_obj",objnull]);
+					};
 				};
 			};
 

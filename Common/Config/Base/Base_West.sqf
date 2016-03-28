@@ -23,7 +23,6 @@ missionNamespace setVariable [format["CTI_%1_Commander_Path", _side], [
 	["upgrade", [CTI_UPGRADE_BARRACKS, 1], {true}],
 	["upgrade", [CTI_UPGRADE_GEAR, 1], {true}],
 	["upgrade", [CTI_UPGRADE_LIGHT, 1], {true}],
-	["upgrade", [CTI_UPGRADE_AIRSTRIKE, 1], {true}],
 	["upgrade", [CTI_UPGRADE_NUKE, 1], {true}],
 	["upgrade", [CTI_UPGRADE_TOWNS, 1], {true}],
 	["upgrade", [CTI_UPGRADE_GEAR, 2], {true}],
@@ -82,8 +81,7 @@ _placements = _placements 	+ [[90, 25]];
 _specials = _specials		+ [[["DMG_Reduce", 0.7]]];  //with value @ 1 = 16 AP Slammer shots, @ .5 = 8 shots, etc (applies only with V1_F structure) so to determine how many shots to down, x/16 = %, where x is how many shots you want it to take
 
 _headers = _headers 		+ [[CTI_CONTROLCENTER, "Control Center", "CC"]];
-_classes = _classes 		+ [["Land_Research_HQ_F", "Land_Research_HQ_ruins_F", ["Land_Research_HQ_F"]]];
-							  
+_classes = _classes 		+ [["Land_Research_HQ_F", "Land_Research_HQ_ruins_F", ["Land_Research_HQ_F"]]];							  
 _prices = _prices 			+ [20000];
 _times = _times 			+ [90];
 _placements = _placements 	+ [[90, 25]];
@@ -93,21 +91,21 @@ _headers = _headers 		+ [[CTI_HEAVY, "Heavy Vehicle Factory (requires upgrade fo
 _classes = _classes 		+ [["Land_Cargo_HQ_V1_F", "Land_Cargo_HQ_V1_ruins_F"]];
 _prices = _prices 			+ [15000];
 _times = _times 			+ [120];
-_placements = _placements 	+ [[90, 25]];
+_placements = _placements 	+ [[90, 30]];
 _specials = _specials		+ [[["DMG_Reduce", .75]]];
 
 _headers = _headers 		+ [[CTI_NAVAL, "Naval Yard", "Naval"]];
 _classes = _classes 		+ [["Land_Lighthouse_small_F", "Land_Lighthouse_small_ruins_F"]];
 _prices = _prices 			+ [4000];
 _times = _times 			+ [35];
-_placements = _placements 	+ [[180, 25]];
+_placements = _placements 	+ [[180, 40]];
 _specials = _specials		+ [[["DMG_Alternative"], ["DMG_Reduce", .5]]];
 
 _headers = _headers 		+ [[CTI_AIR, "Aircraft Factory", "Air"]];
 _classes = _classes 		+ [["Land_Radar_Small_F", "Land_Radar_Small_ruins_F"]];
 _prices = _prices 			+ [20000];
 _times = _times 			+ [140];
-_placements = _placements 	+ [[90, 35]];
+_placements = _placements 	+ [[90, 40]];
 _specials = _specials		+ [[["DMG_Alternative"], ["DMG_Reduce", 1]]];  //with value of 1.2 = 12 slammer ap shots
 
 _headers = _headers 		+ [[CTI_AMMO, "Ammo Depot", "Ammo"]];
@@ -212,19 +210,19 @@ _classes = _classes 		+ ["Land_Mil_WallBig_Gate_F"];
 _prices = _prices 			+ [40];
 _placements = _placements 	+ [[0, 7]];
 _categories = _categories 	+ ["Fortification"];
-/*
+
 _headers = _headers 		+ ["H-Barrier (Small) (1 Block)"];
 _classes = _classes 		+ ["Land_HBarrier_1_F"];
-_prices = _prices 			+ [20];
+_prices = _prices 			+ [10];
 _placements = _placements 	+ [[90, 5]];
 _categories = _categories 	+ ["Fortification"];
 
 _headers = _headers 		+ [["H-Barrier (Small) (5 Block)",[["CanAutoAlign", 6, 0]]]];
 _classes = _classes 		+ ["Land_HBarrier_5_F"];
-_prices = _prices 			+ [100];
+_prices = _prices 			+ [50];
 _placements = _placements 	+ [[0, 5]];
 _categories = _categories 	+ ["Fortification"];
-*/
+
 _headers = _headers 		+ [["Long Sandbag", [["DMG_Reduce", 2]]]];
 _classes = _classes 		+ ["Land_BagFence_Long_F"];
 _prices = _prices 			+ [5];
@@ -333,6 +331,42 @@ _prices = _prices 			+ [10000];
 _placements = _placements 	+ [[180, 5]];
 _categories = _categories 	+ ["Defense"];
 };
+
+_headers = _headers 		+ ["M2 Machine Gun"];
+_classes = _classes 		+ ["CUP_B_M2StaticMG_USMC"];
+_prices = _prices 			+ [1500];
+_placements = _placements 	+ [[180, 5]];
+_categories = _categories 	+ ["Defense"];
+
+_headers = _headers 		+ ["M2 Mini"];
+_classes = _classes 		+ ["CUP_B_M2StaticMG_USMC"];
+_prices = _prices 			+ [1500];
+_placements = _placements 	+ [[180, 5]];
+_categories = _categories 	+ ["Defense"];
+
+_headers = _headers 		+ ["TOW Tripod"];
+_classes = _classes 		+ ["CUP_B_TOW_TriPod_USMC"];
+_prices = _prices 			+ [2000];
+_placements = _placements 	+ [[180, 5]];
+_categories = _categories 	+ ["Defense"];
+
+_headers = _headers 		+ ["M252 81mm mortar"];
+_classes = _classes 		+ ["CUP_B_M252_USMC"];
+_prices = _prices 			+ [10000];
+_placements = _placements 	+ [[180, 5]];
+_categories = _categories 	+ ["Defense"];
+
+_headers = _headers 		+ ["C-RAM Phalanx"];
+_classes = _classes 		+ ["C_at_phalanx_35AI"];
+_prices = _prices 			+ [80000];
+_placements = _placements 	+ [[180, 15]];
+_categories = _categories 	+ ["Defense"];
+
+_headers = _headers 		+ ["C-RAM Phalanx Missle"];
+_classes = _classes 		+ ["C_at_phalanx_missile_35AI"];
+_prices = _prices 			+ [100000];
+_placements = _placements 	+ [[180, 15]];
+_categories = _categories 	+ ["Defense"];
 
 _headers = _headers 		+ ["Camo net"];
 _classes = _classes 		+ ["CamoNet_BLUFOR_F"];
